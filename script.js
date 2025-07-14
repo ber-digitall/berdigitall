@@ -231,3 +231,16 @@ if (contactForm) {
         }
     });
 }
+
+// Teste no console do navegador
+fetch('https://formsubmit.co/ajax/ber.digitall@gmail.com', {
+    method: 'POST',
+    body: JSON.stringify({name: "Teste", message: "Isso é um teste"}),
+    headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+    }
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error(error));
