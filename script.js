@@ -178,3 +178,56 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Formulário de contato - versão corrigida
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const submitBtn = document.getElementById('submitBtn');
+        const formFeedback = document.getElementById('formFeedback');
+        
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Enviando...';
+        
+        try {
+            const formData = new FormData(contactForm);
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (response.ok) {
+                formFeedback.textContent = 'Mensagem enviada com sucesso!';
+                formFeedback.style.display = 'block';
+                formFeedback.style.backgroundColor = 'rgba(0, 247, 255, 0.1)';
+                formFeedback.style.color = 'var(--primary-color)';
+                contactForm.reset();
+                
+                // Redirecionar para a página de obrigado se configurado
+                const nextPage = contactForm.querySelector('input[name="_next"]').value;
+                if (nextPage) {
+                    window.location.href = nextPage;
+                }
+            } else {
+                throw new Error('Falha no envio');
+            }
+        } catch (error) {
+            formFeedback.textContent = 'Erro ao enviar mensagem. Por favor, tente novamente mais tarde ou entre em contato diretamente por WhatsApp.';
+            formFeedback.style.display = 'block';
+            formFeedback.style.backgroundColor = 'rgba(255, 0, 0, 0.1)';
+            formFeedback.style.color = 'var(--secondary-color)';
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Enviar Mensagem';
+            
+            setTimeout(() => {
+                formFeedback.style.display = 'none';
+            }, 5000);
+        }
+    });
+}
