@@ -227,42 +227,44 @@
     </section>
 
     <!-- Contato -->
-    <section id="contato" aria-labelledby="contato-title">
-        <div class="section-title">
-            <h2 id="contato-title">Contato</h2>
-        </div>
-        <div class="contact-form">
-            <form id="contactForm" action="https://formsubmit.co/ber.digitall@gmail.com" method="POST">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://ber-digitall.github.io/berdigitall/obrigado.html">
-                <input type="hidden" name="_template" value="table">
-                <input type="text" name="_honey" style="display:none">
-                
-                <div class="form-group">
-                    <label for="name">Seu Nome</label>
-                    <input type="text" id="name" name="name" class="form-control" required minlength="3">
-                </div>
-                <div class="form-group">
-                    <label for="business">Nome do Empreendimento</label>
-                    <input type="text" id="business" name="business" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Telefone</label>
-                    <input type="tel" id="phone" name="phone" class="form-control" required pattern="\(?\d{2}\)?[\s-]?\d{4,5}[\s-]?\d{4}">
-                </div>
-                <div class="form-group">
-                    <label for="message">Como posso te ajudar?</label>
-                    <textarea id="message" name="message" class="form-control" minlength="10" required></textarea>
-                </div>
-                <button type="submit" class="btn" id="submitBtn">Enviar Mensagem</button>
-                <div id="formFeedback" class="form-feedback"></div>
-            </form>
-        </div>
-    </section>
+<section id="contato" aria-labelledby="contato-title">
+    <div class="section-title">
+        <h2 id="contato-title">Contato</h2>
+    </div>
+    <div class="contact-form">
+        <form id="contactForm" action="https://formsubmit.co/ber.digitall@gmail.com" method="POST">
+            <!-- Configurações do Formsubmit -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://berdigitall.vercel.app/obrigado.html">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="_honey" style="display:none">
+            
+            <!-- Campos do formulário -->
+            <div class="form-group">
+                <label for="name">Seu Nome</label>
+                <input type="text" id="name" name="name" class="form-control" required minlength="3">
+            </div>
+            <div class="form-group">
+                <label for="business">Nome do Empreendimento</label>
+                <input type="text" id="business" name="business" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Telefone</label>
+                <input type="tel" id="phone" name="phone" class="form-control" required pattern="\(?\d{2}\)?[\s-]?\d{4,5}[\s-]?\d{4}">
+            </div>
+            <div class="form-group">
+                <label for="message">Como posso te ajudar?</label>
+                <textarea id="message" name="message" class="form-control" minlength="10" required></textarea>
+            </div>
+            <button type="submit" class="btn" id="submitBtn">Enviar Mensagem</button>
+            <div id="formFeedback" class="form-feedback"></div>
+        </form>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer>
