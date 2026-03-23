@@ -4,55 +4,1016 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="Ber Digitall - Soluções Digitais para Empresas Modernas">
-    <meta name="description"
-        content="A Ber Digitall cria sites incríveis, responsivos e estratégicos para empresas que desejam se destacar no universo digital.">
-    <meta name="keywords"
-        content="Ber Digitall, criação de sites, sites profissionais, design web, soluções digitais, SEO, marketing digital">
+    <title>Ber Digitall - Criação de Sites Profissionais | Soluções Digitais</title>
+    
+    <!-- Meta Tags SEO -->
+    <meta name="description" content="Ber Digitall: Criação de sites profissionais, responsivos e estratégicos para empresas que desejam se destacar no universo digital. Solicite seu orçamento!">
+    <meta name="keywords" content="Ber Digitall, criação de sites, sites profissionais, design web, soluções digitais, SEO, marketing digital, desenvolvimento web, site responsivo">
     <meta name="author" content="Ber Digitall">
     <meta name="robots" content="index, follow">
     <meta name="language" content="pt-BR">
-
+    <meta name="revisit-after" content="7 days">
+    
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.berdigitall.com.br/">
+    <meta property="og:url" content="https://berdigitall.vercel.app/">
     <meta property="og:title" content="Ber Digitall - Soluções Digitais para Empresas Modernas">
-    <meta property="og:description"
-        content="Sites institucionais e estratégias digitais que geram resultados. Conheça a Ber Digitall!">
-    <meta property="og:image" content="https://www.berdigitall.com.br/images/preview.jpg">
-
+    <meta property="og:description" content="Sites institucionais e estratégias digitais que geram resultados. Conheça a Ber Digitall!">
+    <meta property="og:image" content="https://berdigitall.vercel.app/images/preview.jpg">
+    <meta property="og:site_name" content="Ber Digitall">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ber Digitall - Soluções Digitais">
+    <meta name="twitter:description" content="Criação de sites profissionais e estratégias digitais para seu negócio">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://berdigitall.vercel.app/">
+    
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="manifest" href="site.webmanifest">
-
+    
     <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles.css">
-
-    <script src="script.js" defer></script>
-
-    <title>Ber Digitall - Criação de Sites Profissionais</title>
+    
+    <style>
+        /* Reset e Estilos Base - Design Clean Branco com RGB */
+        :root {
+            --red: #e74c3c;
+            --green: #2ecc71;
+            --blue: #3498db;
+            --header-blue: #0000FE;
+            --red-light: #fadbd7;
+            --green-light: #d5f4e6;
+            --blue-light: #d4e6f1;
+            --white: #ffffff;
+            --gray-50: #fafafa;
+            --gray-100: #f5f5f5;
+            --gray-200: #e5e5e5;
+            --gray-300: #d4d4d4;
+            --gray-400: #a3a3a3;
+            --gray-500: #737373;
+            --gray-600: #525252;
+            --gray-700: #404040;
+            --gray-800: #262626;
+            --gray-900: #171717;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--white);
+            color: var(--gray-700);
+            line-height: 1.6;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Tipografia */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--gray-800);
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        /* Botões */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: var(--blue);
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--blue);
+            color: var(--blue);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--blue);
+            color: var(--white);
+        }
+        
+        .btn-outline-red {
+            background: transparent;
+            border: 2px solid var(--red);
+            color: var(--red);
+        }
+        
+        .btn-outline-red:hover {
+            background: var(--red);
+            color: var(--white);
+        }
+        
+        .btn-large {
+            padding: 14px 36px;
+            font-size: 1rem;
+        }
+        
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+        
+        .section-title h2 {
+            display: inline-block;
+            position: relative;
+            color: var(--gray-800);
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--red), var(--green), var(--blue));
+            border-radius: 3px;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--header-blue);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            height: 48px;
+            transition: opacity 0.3s ease;
+        }
+        
+        .logo:hover {
+            opacity: 0.8;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+        
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+            position: relative;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--white);
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        nav ul li a:hover {
+            opacity: 0.9;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 100%);
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            background: linear-gradient(135deg, var(--red), var(--green), var(--blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 32px;
+            color: var(--gray-500);
+        }
+        
+        /* Why Site Section */
+        .why-site {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .why-site-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        .why-site-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+        
+        .why-site-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--red-light), var(--green-light), var(--blue-light));
+            color: var(--gray-700);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .why-site-header h2 {
+            font-size: 2.2rem;
+            color: var(--gray-800);
+        }
+        
+        .why-site-header .highlight {
+            background: linear-gradient(135deg, var(--red), var(--green), var(--blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .why-site-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-bottom: 56px;
+        }
+        
+        .why-site-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.3s ease;
+        }
+        
+        .why-site-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+            border-color: transparent;
+        }
+        
+        .why-site-card.featured {
+            border-top: 4px solid var(--green);
+            position: relative;
+        }
+        
+        .featured-tag {
+            position: absolute;
+            top: -12px;
+            right: 24px;
+            background: var(--green);
+            color: var(--white);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+        
+        .why-site-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .why-site-card h3 {
+            color: var(--gray-800);
+            margin-bottom: 12px;
+        }
+        
+        .why-site-card p {
+            color: var(--gray-500);
+            line-height: 1.6;
+        }
+        
+        .why-site-cta {
+            text-align: center;
+            background: var(--gray-50);
+            border-radius: 24px;
+            padding: 48px;
+            border: 1px solid var(--gray-200);
+        }
+        
+        .why-site-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 28px;
+            color: var(--gray-600);
+        }
+        
+        .why-site-cta p strong {
+            color: var(--red);
+        }
+        
+        /* About Section */
+        #sobre {
+            padding: 80px 0;
+            background: var(--gray-50);
+        }
+        
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            color: var(--blue);
+            margin-bottom: 16px;
+        }
+        
+        .about-text p {
+            color: var(--gray-600);
+            margin-bottom: 16px;
+        }
+        
+        .about-image {
+            flex: 1;
+            position: relative;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: var(--shadow-xl);
+            transition: transform 0.3s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.02);
+        }
+        
+        /* History Section */
+        #historia {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .history-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .history-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--red), var(--green), var(--blue));
+        }
+        
+        .timeline-item {
+            margin-bottom: 48px;
+            position: relative;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--blue);
+            top: 0;
+        }
+        
+        .timeline-content {
+            width: calc(50% - 40px);
+            padding: 24px;
+            background: var(--white);
+            border-radius: 16px;
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-content:hover {
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+        }
+        
+        .timeline-content h3 {
+            color: var(--green);
+            margin-bottom: 8px;
+        }
+        
+        .timeline-content p {
+            color: var(--gray-500);
+        }
+        
+        /* Testimonials Section */
+        #depoimentos {
+            padding: 80px 0;
+            background: var(--gray-50);
+        }
+        
+        .testimonials {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-carousel {
+            position: relative;
+            min-height: 320px;
+        }
+        
+        .testimonial-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            text-align: center;
+            padding: 40px;
+            background: var(--white);
+            border-radius: 20px;
+            border: 1px solid var(--gray-200);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .testimonial-slide.active {
+            opacity: 1;
+            position: relative;
+        }
+        
+        .testimonial-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid var(--blue);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--gray-600);
+        }
+        
+        .testimonial-author {
+            color: var(--green);
+            font-weight: 600;
+        }
+        
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+        
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--gray-300);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .dot.active {
+            background: var(--blue);
+            transform: scale(1.2);
+        }
+        
+        /* Portfolio Section */
+        #portfolio {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .portfolio-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+        }
+        
+        .portfolio-item {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid var(--gray-200);
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .portfolio-image {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+        
+        .portfolio-info {
+            padding: 24px;
+        }
+        
+        .portfolio-info h3 {
+            color: var(--green);
+            margin-bottom: 8px;
+        }
+        
+        .portfolio-info p {
+            color: var(--gray-500);
+            margin-bottom: 16px;
+        }
+        
+        /* Stats */
+        .stats {
+            max-width: 1200px;
+            margin: 64px auto 0;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 32px;
+            background: var(--gray-50);
+            border-radius: 16px;
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--red), var(--green), var(--blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+        
+        .stat-text {
+            color: var(--gray-500);
+            font-size: 0.9rem;
+        }
+        
+        /* Evolution Message */
+        .evolution-message {
+            padding: 60px 0;
+            background: linear-gradient(135deg, var(--red-light), var(--green-light), var(--blue-light));
+            text-align: center;
+        }
+        
+        .evolution-content i {
+            font-size: 3rem;
+            background: linear-gradient(135deg, var(--red), var(--green), var(--blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+        
+        .evolution-content h3 {
+            color: var(--gray-800);
+            margin-bottom: 12px;
+        }
+        
+        .evolution-content p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--gray-600);
+        }
+        
+        /* Tools Section */
+        .tools-section {
+            padding: 60px 0;
+            background: var(--white);
+        }
+        
+        .tools-carousel {
+            overflow: hidden;
+            padding: 20px 0;
+        }
+        
+        .tools-track {
+            display: flex;
+            gap: 24px;
+            animation: scrollTools 40s linear infinite;
+        }
+        
+        .tools-track:hover {
+            animation-play-state: paused;
+        }
+        
+        .tool-item {
+            min-width: 240px;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .tool-item:hover {
+            border-color: var(--blue);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+        
+        .tool-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--gray-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .tool-logo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .tool-info h3 {
+            color: var(--blue);
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+        
+        .tool-info p {
+            color: var(--gray-400);
+            font-size: 0.8rem;
+        }
+        
+        .tools-note {
+            text-align: center;
+            color: var(--gray-400);
+            margin-top: 40px;
+            font-size: 0.85rem;
+        }
+        
+        @keyframes scrollTools {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        /* Contact Section */
+        #contato {
+            padding: 80px 0;
+            background: var(--gray-50);
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        .form-group {
+            margin-bottom: 24px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--gray-700);
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--white);
+            border: 1px solid var(--gray-300);
+            border-radius: 8px;
+            color: var(--gray-800);
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--blue);
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-feedback {
+            margin-top: 20px;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            display: none;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--gray-900);
+            padding: 48px 24px 32px;
+            color: var(--gray-400);
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            height: 48px;
+            margin-bottom: 24px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--blue);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--gray-400);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--blue);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        
+        .copyright {
+            color: var(--gray-500);
+            font-size: 0.85rem;
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 54px;
+            height: 54px;
+            background: var(--green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: var(--shadow-lg);
+            text-decoration: none;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            background: #27ae60;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.75rem; }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--header-blue);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: left 0.3s ease;
+                gap: 32px;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .history-timeline::before {
+                left: 24px;
+            }
+            
+            .timeline-item::before {
+                left: 24px;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px !important;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .why-site-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .why-site-cta {
+                padding: 32px 24px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .btn-large {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Conexões de fundo -->
-    <div class="background-icons" id="background-icons"></div>
-
     <!-- Header -->
     <header>
         <div class="header-container">
             <a href="#inicio" aria-label="Ir para o início">
-                <img src="logo19550-removebg-preview.png" alt="Ber Digitall" class="logo" loading="lazy">
+                <img src="logo_berdigitall2_230326.png" alt="Ber Digitall" class="logo" loading="lazy">
             </a>
             <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu mobile" aria-expanded="false">
                 <i class="fas fa-bars"></i>
@@ -72,11 +1033,12 @@
 
     <!-- Banner Hero -->
     <section class="hero" id="inicio">
-        <div class="hero-content">
-            <h1>Tecnologia acessível para todos</h1>
-            <p>Na Ber Digitall, criamos sites básicos, responsivos e seguros por um preço justo, porque acreditamos que
-                toda empresa merece ter sua presença online.</p>
-            <a href="#contato" class="btn">Solicitar Orçamento</a>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Tecnologia acessível para todos</h1>
+                <p>Na Ber Digitall, criamos sites básicos, responsivos e seguros por um preço justo, porque acreditamos que toda empresa merece ter sua presença online.</p>
+                <a href="#contato" class="btn btn-primary">Solicitar Orçamento</a>
+            </div>
         </div>
     </section>
 
@@ -87,466 +1049,230 @@
                 <span class="why-site-badge">🔍 VOCÊ SABIA?</span>
                 <h2>Por que sua empresa <span class="highlight">PRECISA</span> de um site?</h2>
             </div>
-
             <div class="why-site-grid">
                 <div class="why-site-card">
                     <div class="why-site-icon">🌐</div>
                     <h3>Você não existe online</h3>
-                    <p>87% dos consumidores pesquisam na internet antes de comprar um produto ou serviço. Sem site, você
-                        é invisível para eles.</p>
+                    <p>87% dos consumidores pesquisam na internet antes de comprar. Sem site, você é invisível.</p>
                 </div>
-
                 <div class="why-site-card featured">
                     <div class="why-site-icon">⏰</div>
                     <h3>Funciona 24 horas por dia</h3>
-                    <p>Enquanto você dorme, seu site trabalha: recebe mensagens, divulga seus serviços e capta clientes
-                        automaticamente.</p>
+                    <p>Enquanto você dorme, seu site trabalha: recebe mensagens e capta clientes automaticamente.</p>
                     <div class="featured-tag">MAIS IMPORTANTE</div>
                 </div>
-
                 <div class="why-site-card">
                     <div class="why-site-icon">💰</div>
-                    <h3>O melhor custo-benefício</h3>
-                    <p>Por menos que um almoço por mês, você tem uma ferramenta profissional que traz clientes o ano
-                        inteiro.</p>
+                    <h3>Melhor custo-benefício</h3>
+                    <p>Por menos que um almoço por mês, você tem uma ferramenta profissional que traz clientes.</p>
                 </div>
-
                 <div class="why-site-card">
                     <div class="why-site-icon">📱</div>
                     <h3>Passa credibilidade</h3>
-                    <p>Empresa sem site parece amadora. Com um site profissional, você ganha a confiança do cliente
-                        antes mesmo do primeiro contato.</p>
+                    <p>Empresa sem site parece amadora. Com um site profissional, você ganha confiança.</p>
                 </div>
-
                 <div class="why-site-card">
                     <div class="why-site-icon">🎯</div>
                     <h3>Seus clientes estão online</h3>
-                    <p>Seu concorrente tem site. Seus clientes procuram no Google. Ficar de fora é entregar clientes de
-                        bandeja pra concorrência.</p>
+                    <p>Seu concorrente tem site. Ficar de fora é entregar clientes para a concorrência.</p>
                 </div>
-
                 <div class="why-site-card">
                     <div class="why-site-icon">📊</div>
                     <h3>Você controla tudo</h3>
-                    <p>Diferente das redes sociais, você não está refém de algoritmos. O site é SEU, você controla as
-                        regras.</p>
+                    <p>Diferente das redes sociais, você não está refém de algoritmos. O site é SEU.</p>
                 </div>
             </div>
-
             <div class="why-site-cta">
-                <p><strong>Não fique para trás!</strong> Enquanto você lê isso, alguém está procurando exatamente o que
-                    você vende. Está encontrando você ou seu concorrente?</p>
-                <a href="#contato" class="btn btn-large">CRIAR MEU SITE AGORA</a>
+                <p><strong>Não fique para trás!</strong> Enquanto você lê isso, alguém está procurando exatamente o que você vende.</p>
+                <a href="#contato" class="btn btn-primary btn-large">CRIAR MEU SITE AGORA</a>
             </div>
         </div>
     </section>
 
     <!-- Sobre -->
-    <section id="sobre" aria-labelledby="sobre-title">
-        <div class="section-title">
-            <h2 id="sobre-title">Sobre</h2>
-        </div>
-        <div class="about-content">
-            <div class="about-text">
-                <h3>Tiago Bernardes</h3>
-                <p>Olá! Sou Tiago Bernardes, fundador da Ber Digitall. Sou um apaixonado por tecnologia, corrida de rua
-                    amadora e aviação civil. Minha missão é democratizar o acesso a sites básicos porém responsivos,
-                    robustos e seguros para pequenos negócios e empreendedores.</p>
-                <p>Com uma abordagem moderna e utilizando inteligências artificiais como auxiliares no desenvolvimento,
-                    consigo oferecer sites de alta qualidade por preços acessíveis, sem comprometer a segurança ou o
-                    design.</p>
-                <p>Trabalho remotamente e me orgulho de oferecer um atendimento personalizado, entendendo as
-                    necessidades de cada cliente para criar a solução perfeita para o seu negócio.</p>
+    <section id="sobre">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sobre</h2>
             </div>
-            <div class="about-image">
-                <img src="imagemtiago.jpeg" width="500" height="500" alt="Tiago Bernardes, fundador da Ber Digitall"
-                    loading="lazy">
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Tiago Bernardes</h3>
+                    <p>Olá! Sou Tiago Bernardes, fundador da Ber Digitall. Sou apaixonado por tecnologia, corrida de rua amadora e aviação civil. Minha missão é democratizar o acesso a sites responsivos, robustos e seguros para pequenos negócios e empreendedores.</p>
+                    <p>Com uma abordagem moderna e utilizando inteligências artificiais como auxiliares no desenvolvimento, consigo oferecer sites de alta qualidade por preços acessíveis, sem comprometer a segurança ou o design.</p>
+                    <p>Trabalho remotamente e me orgulho de oferecer um atendimento personalizado, entendendo as necessidades de cada cliente para criar a solução perfeita para o seu negócio.</p>
+                </div>
+                <div class="about-image">
+                    <img src="imagemtiago.jpeg" alt="Tiago Bernardes, fundador da Ber Digitall" loading="lazy">
+                </div>
             </div>
         </div>
     </section>
 
     <!-- História -->
-    <section id="historia" aria-labelledby="historia-title">
-        <div class="section-title">
-            <h2 id="historia-title">História</h2>
-        </div>
-        <div class="history-timeline">
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>2023 - O Início</h3>
-                    <p>Comecei a estudar desenvolvimento web por conta própria, motivado pela paixão por tecnologia e
-                        pelo desejo de criar soluções digitais acessíveis.</p>
-                </div>
+    <section id="historia">
+        <div class="container">
+            <div class="section-title">
+                <h2>História</h2>
             </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>2024 - Primeiros Projetos</h3>
-                    <p>Desenvolvi meus primeiros sites para amigos e familiares, descobrindo a satisfação de ajudar
-                        pequenos negócios a se estabelecerem online.</p>
+            <div class="history-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>2023 - O Início</h3>
+                        <p>Comecei a estudar desenvolvimento web por conta própria, motivado pela paixão por tecnologia e pelo desejo de criar soluções digitais acessíveis.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>2025 - Nascimento da Ber Digitall</h3>
-                    <p>Fundei a Ber Digitall com o objetivo de oferecer sites básicos, seguros e rosbustos a preços
-                        acessíveis, utilizando tecnologias modernas e inteligência artificial como aliada.</p>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>2024 - Primeiros Projetos</h3>
+                        <p>Desenvolvi meus primeiros sites para amigos e familiares, descobrindo a satisfação de ajudar pequenos negócios a se estabelecerem online.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Atualmente - Primeiros projetos</h3>
-                    <p>Atendi 5 clientes até o momento que ficaram satisfeitos com os sites entregues, comprovando que é
-                        possível oferecer qualidade sem custos exorbitantes.</p>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>2025 - Nascimento da Ber Digitall</h3>
+                        <p>Fundei a Ber Digitall com o objetivo de oferecer sites básicos, seguros e robustos a preços acessíveis, utilizando tecnologias modernas.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Atualmente - Primeiros projetos</h3>
+                        <p>Atendi 5 clientes até o momento que ficaram satisfeitos com os sites entregues, comprovando que é possível oferecer qualidade sem custos exorbitantes.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Depoimentos -->
-    <section id="depoimentos" aria-labelledby="depoimentos-title">
-        <div class="section-title">
-            <h2 id="depoimentos-title">Depoimento</h2>
-        </div>
-        <div class="testimonials">
-            <div class="testimonial-carousel">
-
-                <div class="testimonial-slide">
-                    <img src="imagemjessicapets.png" alt="Jéssica" class="testimonial-image" loading="lazy">
-                    <p class="testimonial-text">"Precisava urgentemente de um site para minha loja de pet shop recém
-                        inaugurada. O Tiago e a Ber Digitall superaram minhas expectativas e muitos clientes estão me
-                        encontrando pelo site."</p>
-                    <p class="testimonial-author">Jéssica - Pet Shop Jéssica Pets</p>
-
-                    <div class="carousel-dots">
-                        <span class="dot" onclick="currentSlide(1)" aria-label="Ir para depoimento 1"></span>
+    <section id="depoimentos">
+        <div class="container">
+            <div class="section-title">
+                <h2>Depoimento</h2>
+            </div>
+            <div class="testimonials">
+                <div class="testimonial-carousel">
+                    <div class="testimonial-slide active">
+                        <img src="imagemjessicapets.png" alt="Jéssica" class="testimonial-image" loading="lazy">
+                        <p class="testimonial-text">"Precisava urgentemente de um site para minha loja de pet shop recém inaugurada. O Tiago e a Ber Digitall superaram minhas expectativas e muitos clientes estão me encontrando pelo site."</p>
+                        <p class="testimonial-author">Jéssica - Pet Shop Jéssica Pets</p>
                     </div>
                 </div>
+                <div class="carousel-dots">
+                    <span class="dot active" onclick="currentSlide(0)"></span>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Portfólio -->
-    <section id="portfolio" aria-labelledby="portfolio-title">
-        <div class="section-title">
-            <h2 id="portfolio-title">Portfólio</h2>
-        </div>
-
-        <!-- Container centralizado do portfólio -->
+    <section id="portfolio">
         <div class="portfolio-container">
-            <!-- Grade de projetos -->
-            <div class="portfolio-grid" id="portfolio-grid">
-                <!-- Projeto 1 - Jéssica Pets -->
+            <div class="section-title">
+                <h2>Portfólio</h2>
+            </div>
+            <div class="portfolio-grid">
                 <div class="portfolio-item">
-                    <img src="imagemjessicapets.png" alt="Site Jéssica Pets - Pet Shop" class="portfolio-image"
-                        loading="lazy">
+                    <img src="imagemjessicapets.png" alt="Site Jéssica Pets" class="portfolio-image" loading="lazy">
                     <div class="portfolio-info">
                         <h3>Jéssica Pets</h3>
                         <p>Site completo que mostra o pet shop da Jéssica recém inaugurado em São Miguel Paulista.</p>
-                        <a href="http://jessicapets.vercel.app" class="btn" target="_blank" rel="noopener">Visite o
-                            Site</a>
+                        <a href="http://jessicapets.vercel.app" class="btn btn-secondary" target="_blank" rel="noopener">Visite o Site</a>
                     </div>
                 </div>
-
-                <!-- Indicadores -->
-                <div class="stats">
-                    <div class="stat-item">
-                        <div class="stat-number">1</div>
-                        <div class="stat-text">Clientes Satisfeitos</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">1</div>
-                        <div class="stat-text">Projetos Entregues</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" id="experiencia-valor">0</div>
-                        <div class="stat-text" id="experiencia-texto">Meses de Experiência</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">7</div>
-                        <div class="stat-text">Projetos em Andamento</div>
-                    </div>
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">1</div>
+                    <div class="stat-text">Clientes Satisfeitos</div>
                 </div>
+                <div class="stat-item">
+                    <div class="stat-number">1</div>
+                    <div class="stat-text">Projetos Entregues</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="experiencia-valor">0</div>
+                    <div class="stat-text" id="experiencia-texto">Meses de Experiência</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">7</div>
+                    <div class="stat-text">Projetos em Andamento</div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    </section>
     <!-- Mensagem de Evolução -->
     <section class="evolution-message">
-        <div class="evolution-container">
+        <div class="container">
             <div class="evolution-content">
                 <i class="fas fa-rocket"></i>
                 <h3>Em constante evolução</h3>
-                <p>Estamos sempre aprendendo, nos atualizando e buscando novas formas de atender cada vez melhor nossos
-                    clientes. Cada projeto é uma oportunidade de crescer juntos!</p>
-                <div class="evolution-dots">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+                <p>Estamos sempre aprendendo, nos atualizando e buscando novas formas de atender cada vez melhor nossos clientes. Cada projeto é uma oportunidade de crescer juntos!</p>
             </div>
         </div>
     </section>
 
     <!-- Ferramentas e IAs -->
     <section class="tools-section">
-        <div class="tools-container">
+        <div class="container">
             <div class="section-title">
-                <h2>Tecnologias e IAs que potencializam nossos projetos</h2>
+                <h2>Tecnologias que potencializam nossos projetos</h2>
             </div>
-
             <div class="tools-carousel">
                 <div class="tools-track" id="toolsTrack">
-                    <!-- Ferramenta 1 - DeepSeek -->
-                    <div class="tool-item">
-                        <div class="tool-icon">
-                            <img src="https://cdn.simpleicons.org/deepseek" alt="DeepSeek" class="tool-logo"
-                                loading="lazy"
-                                style="background: white; padding: 5px; border-radius: 50%; width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="tool-info">
-                            <h3>DeepSeek</h3>
-                            <p>IA para desenvolvimento e soluções criativas</p>
-                        </div>
-                    </div>
-
-                    <!-- Ferramenta 2 - ChatGPT -->
-                    <div class="tool-item">
-                        <div class="tool-icon">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg"
-                                alt="ChatGPT" class="tool-logo" loading="lazy"
-                                style="background: white; padding: 5px; border-radius: 50%; width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="tool-info">
-                            <h3>ChatGPT</h3>
-                            <p>Assistente inteligente para código e conteúdo</p>
-                        </div>
-                    </div>
-
-                    <!-- Ferramenta 3 - Copilot -->
-                    <div class="tool-item">
-                        <div class="tool-icon">
-                            <img src="https://cdn.simpleicons.org/githubcopilot" alt="GitHub Copilot" class="tool-logo"
-                                loading="lazy"
-                                style="background: white; padding: 5px; border-radius: 50%; width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="tool-info">
-                            <h3>GitHub Copilot</h3>
-                            <p>Programação assistida por IA</p>
-                        </div>
-                    </div>
-
-                    <!-- Ferramenta 4 - VS Code -->
-                    <div class="tool-item">
-                        <div class="tool-icon">
-                            <img src="https://cdn.simpleicons.org/visualstudiocode" alt="VS Code" class="tool-logo"
-                                loading="lazy"
-                                style="background: white; padding: 5px; border-radius: 50%; width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="tool-info">
-                            <h3>VS Code</h3>
-                            <p>Editor de código principal</p>
-                        </div>
-                    </div>
-
-                    <!-- Ferramenta 5 - Prompt Cowboy -->
-                    <div class="tool-item">
-                        <div class="tool-icon">
-                            <img src="https://dummyimage.com/80x80/000/fff&text=PC" alt="Prompt Cowboy"
-                                class="tool-logo" loading="lazy"
-                                style="background: white; border-radius: 50%; width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="tool-info">
-                            <h3>Prompt Cowboy</h3>
-                            <p>Otimização de prompts para IAs</p>
-                        </div>
-                    </div>
-
-                    <!-- Ferramenta 6 - Vercel -->
-                    <div class="tool-item">
-                        <div class="tool-icon">
-                            <img src="https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png"
-                                alt="Vercel" class="tool-logo" loading="lazy"
-                                style="border-radius: 50%; width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="tool-info">
-                            <h3>Vercel</h3>
-                            <p>Hospedagem e deploy contínuo</p>
-                        </div>
-                    </div>
-
-                    <!-- Ferramenta 7 - GitHub -->
-                    <div class="tool-item">
-                        <div class="tool-icon">
-                            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
-                                alt="GitHub" class="tool-logo" loading="lazy"
-                                style="background: white; padding: 5px; border-radius: 50%; width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="tool-info">
-                            <h3>GitHub</h3>
-                            <p>Versionamento e colaboração</p>
-                        </div>
-                    </div>
-
-                    <!-- Ferramenta 8 - Canva -->
-                    <div class="tool-item">
-                        <div class="tool-icon">
-                            <img src="https://static.canva.com/static/images/favicon-1.ico" alt="Canva"
-                                class="tool-logo" loading="lazy"
-                                style="border-radius: 50%; width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="tool-info">
-                            <h3>Canva</h3>
-                            <p>Criação de artes e design</p>
-                        </div>
-                    </div>
-
-                    <!-- DUPLICAÇÃO PARA EFEITO INFINITO -->
-                    <!-- Ferramenta 1 - DeepSeek (cópia) -->
-                    <div class="tool-item">
-                        <div class="tool-icon">
-                            <img src="logo_deepseek-removebg-preview.png" alt="DeepSeek" class="tool-logo"
-                                loading="lazy"
-                                style="background: white; padding: 5px; border-radius: 50%; width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="tool-info">
-                            <h3>DeepSeek</h3>
-                            <p>IA para desenvolvimento e soluções criativas</p>
-                        </div>
-                    </div>
-
-                    <!-- Ferramenta 2 - ChatGPT (cópia) -->
-                    <div class="tool-item">
-                        <div class="tool-icon">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg"
-                                alt="ChatGPT" class="tool-logo" loading="lazy"
-                                style="background: white; padding: 5px; border-radius: 50%; width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="tool-info">
-                            <h3>ChatGPT</h3>
-                            <p>Assistente inteligente para código e conteúdo</p>
-                        </div>
-                    </div>
-
-                    <!-- Ferramenta 3 - Copilot (cópia) -->
-                    <div class="tool-item">
-                        <div class="tool-icon">
-                            <img src="https://cdn.simpleicons.org/githubcopilot" alt="GitHub Copilot" class="tool-logo"
-                                loading="lazy"
-                                style="background: white; padding: 5px; border-radius: 50%; width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="tool-info">
-                            <h3>GitHub Copilot</h3>
-                            <p>Programação assistida por IA</p>
-                        </div>
-                    </div>
-
-                    <!-- Ferramenta 4 - VS Code (cópia) -->
-                    <div class="tool-item">
-                        <div class="tool-icon">
-                            <img src="logo_vscode-removebg-preview.png" alt="VS Code" class="tool-logo" loading="lazy"
-                                style="background: white; padding: 5px; border-radius: 50%; width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="tool-info">
-                            <h3>VS Code</h3>
-                            <p>Editor de código principal</p>
-                        </div>
-                    </div>
-
-                    <!-- Ferramenta 5 - Prompt Cowboy (cópia) -->
-                    <div class="tool-item">
-                        <div class="tool-icon">
-                            <img src="logo_promptcowboy.png" width="80" height="80"
-                                style="border-radius:50%; object-fit:cover;">
-                        </div>
-                        <div class="tool-info">
-                            <h3>Prompt Cowboy</h3>
-                            <p>Otimização de prompts para IAs</p>
-                        </div>
-                    </div>
-
-                    <!-- Ferramenta 6 - Vercel (cópia) -->
-                    <div class="tool-item">
-                        <div class="tool-icon">
-                            <img src="https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png"
-                                alt="Vercel" class="tool-logo" loading="lazy"
-                                style="border-radius: 50%; width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="tool-info">
-                            <h3>Vercel</h3>
-                            <p>Hospedagem e deploy contínuo</p>
-                        </div>
-                    </div>
-
-                    <!-- Ferramenta 7 - GitHub (cópia) -->
-                    <div class="tool-item">
-                        <div class="tool-icon">
-                            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
-                                alt="GitHub" class="tool-logo" loading="lazy"
-                                style="background: white; padding: 5px; border-radius: 50%; width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="tool-info">
-                            <h3>GitHub</h3>
-                            <p>Versionamento e colaboração</p>
-                        </div>
-                    </div>
-
-                    <!-- Ferramenta 8 - Canva (cópia) -->
-                    <div class="tool-item">
-                        <div class="tool-icon">
-                            <img src="https://static.canva.com/static/images/favicon-1.ico" alt="Canva"
-                                class="tool-logo" loading="lazy"
-                                style="border-radius: 50%; width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="tool-info">
-                            <h3>Canva</h3>
-                            <p>Criação de artes e design</p>
-                        </div>
-                    </div>
+                    <div class="tool-item"><div class="tool-icon"><img src="https://cdn.simpleicons.org/deepseek" alt="DeepSeek" class="tool-logo"></div><div class="tool-info"><h3>DeepSeek</h3><p>IA para desenvolvimento</p></div></div>
+                    <div class="tool-item"><div class="tool-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT" class="tool-logo"></div><div class="tool-info"><h3>ChatGPT</h3><p>Assistente inteligente</p></div></div>
+                    <div class="tool-item"><div class="tool-icon"><img src="https://cdn.simpleicons.org/githubcopilot" alt="GitHub Copilot" class="tool-logo"></div><div class="tool-info"><h3>GitHub Copilot</h3><p>Programação assistida</p></div></div>
+                    <div class="tool-item"><div class="tool-icon"><img src="https://cdn.simpleicons.org/visualstudiocode" alt="VS Code" class="tool-logo"></div><div class="tool-info"><h3>VS Code</h3><p>Editor de código</p></div></div>
+                    <div class="tool-item"><div class="tool-icon"><img src="https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png" alt="Vercel" class="tool-logo"></div><div class="tool-info"><h3>Vercel</h3><p>Hospedagem</p></div></div>
+                    <div class="tool-item"><div class="tool-icon"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="tool-logo"></div><div class="tool-info"><h3>GitHub</h3><p>Versionamento</p></div></div>
                 </div>
             </div>
-
-            <p class="tools-note">Sites responsivos e modernos utilizando as melhores Inteligências Artificiais.</p>
+            <p class="tools-note">Sites responsivos e modernos utilizando as melhores tecnologias e Inteligências Artificiais.</p>
         </div>
     </section>
 
     <!-- Contato -->
-    <section id="contato" aria-labelledby="contato-title">
-        <div class="section-title">
-            <h2 id="contato-title">Contato</h2>
-        </div>
-        <div class="contact-form">
-            <form id="contactForm" onsubmit="event.preventDefault(); enviarWhatsApp()">
-                <!-- Campos do formulário -->
-                <div class="form-group">
-                    <label for="name">Seu Nome</label>
-                    <input type="text" id="name" name="name" class="form-control" required minlength="3">
-                </div>
-                <div class="form-group">
-                    <label for="business">Nome do Empreendimento</label>
-                    <input type="text" id="business" name="business" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Telefone</label>
-                    <input type="tel" id="phone" name="phone" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Como posso te ajudar?</label>
-                    <textarea id="message" name="message" class="form-control" minlength="10" required></textarea>
-                </div>
-                <button type="submit" class="btn" id="submitBtn">Enviar formulário direto pelo Whatsapp, desta forma
-                    você será atendido mais rápido.</button>
-                <div id="formFeedback" class="form-feedback"></div>
-            </form>
+    <section id="contato">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contato</h2>
+            </div>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Seu Nome</label>
+                        <input type="text" id="name" name="name" class="form-control" required minlength="3">
+                    </div>
+                    <div class="form-group">
+                        <label for="business">Nome do Empreendimento</label>
+                        <input type="text" id="business" name="business" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefone</label>
+                        <input type="tel" id="phone" name="phone" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Como posso te ajudar?</label>
+                        <textarea id="message" name="message" class="form-control" minlength="10" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="submitBtn">Enviar pelo WhatsApp</button>
+                    <div id="formFeedback" class="form-feedback"></div>
+                </form>
+            </div>
         </div>
     </section>
-
 
     <!-- Footer -->
     <footer>
         <div class="footer-container">
             <a href="#inicio" aria-label="Ir para o início">
-                <img src="logo19550-removebg-preview.png" alt="Ber Digitall" class="footer-logo" loading="lazy">
+                <img src="logo_berdigitall_footer_230326.png" alt="Ber Digitall" class="footer-logo" loading="lazy">
             </a>
             <div class="footer-links">
                 <a href="#inicio">Início</a>
@@ -555,10 +1281,8 @@
                 <a href="#contato">Contato</a>
             </div>
             <div class="social-links">
-                <a href="https://wa.me/5511993335167?text=Olá, eu visitei o seu *site e gostaria de saber mais.*"
-                    target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://instagram.com/ber.digitall" target="_blank" rel="noopener" aria-label="Instagram"><i
-                        class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/5511993335167?text=Olá, eu visitei o seu site e gostaria de saber mais." target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://instagram.com/ber.digitall" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="mailto:ber.digitall@gmail.com" aria-label="Email"><i class="far fa-envelope"></i></a>
             </div>
             <div class="copyright">
@@ -568,10 +1292,121 @@
     </footer>
 
     <!-- Botão WhatsApp -->
-    <a href="https://wa.me/5511993335167?text=Olá, eu visitei o seu *site e gostaria de saber mais.*"
-        class="whatsapp-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <a href="https://wa.me/5511993335167?text=Olá, eu visitei o seu site e gostaria de saber mais." class="whatsapp-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu mobile
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const navMenu = document.getElementById('nav-menu');
+            
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', !isExpanded);
+                });
+            }
+            
+            // Calcular experiência
+            function calcularExperiencia() {
+                const dataInicio = new Date('2025-09-13');
+                const dataAtual = new Date();
+                let anos = dataAtual.getFullYear() - dataInicio.getFullYear();
+                let meses = dataAtual.getMonth() - dataInicio.getMonth();
+                if (meses < 0) { anos--; meses += 12; }
+                const totalMeses = (anos * 12) + meses;
+                const statExperiencia = document.querySelector('.stat-item:nth-child(3) .stat-number');
+                const statTexto = document.querySelector('.stat-item:nth-child(3) .stat-text');
+                if (statExperiencia && statTexto) {
+                    if (anos >= 1) {
+                        statExperiencia.textContent = anos;
+                        statTexto.textContent = anos === 1 ? 'Ano de Experiência' : 'Anos de Experiência';
+                    } else {
+                        statExperiencia.textContent = totalMeses;
+                        statTexto.textContent = totalMeses === 1 ? 'Mês de Experiência' : 'Meses de Experiência';
+                    }
+                }
+            }
+            calcularExperiencia();
+            
+            // Ano no footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Scroll suave
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        window.scrollTo({ top: targetElement.offsetTop - headerHeight, behavior: 'smooth' });
+                        if (navMenu.classList.contains('active')) navMenu.classList.remove('active');
+                    }
+                });
+            });
+            
+            // Formulário WhatsApp
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const nome = document.getElementById('name').value;
+                    const empresa = document.getElementById('business').value;
+                    const email = document.getElementById('email').value;
+                    const telefone = document.getElementById('phone').value;
+                    const mensagem = document.getElementById('message').value;
+                    const texto = `*Contato Ber Digitall*%0A%0A*Nome:* ${nome}%0A*Empresa:* ${empresa}%0A*E-mail:* ${email}%0A*Telefone:* ${telefone}%0A*Mensagem:* ${mensagem}`;
+                    const url = `https://wa.me/5511993335167?text=${texto}`;
+                    const submitBtn = document.getElementById('submitBtn');
+                    const formFeedback = document.getElementById('formFeedback');
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Redirecionando...';
+                    formFeedback.textContent = 'Abrindo WhatsApp...';
+                    formFeedback.style.display = 'block';
+                    formFeedback.style.backgroundColor = '#d5f4e6';
+                    formFeedback.style.color = '#2ecc71';
+                    window.open(url, '_blank');
+                    setTimeout(() => {
+                        contactForm.reset();
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Enviar pelo WhatsApp';
+                        setTimeout(() => { formFeedback.style.display = 'none'; }, 3000);
+                    }, 2000);
+                });
+            }
+            
+            // Animação ao scroll
+            const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            document.querySelectorAll('.portfolio-item, .timeline-item, .stat-item, .why-site-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(el);
+            });
+        });
+        
+        function currentSlide(n) {
+            const slides = document.querySelectorAll('.testimonial-slide');
+            const dots = document.querySelectorAll('.dot');
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            if (slides[n]) slides[n].classList.add('active');
+            if (dots[n]) dots[n].classList.add('active');
+        }
+    </script>
 </body>
 
 </html>
