@@ -2,46 +2,61 @@
 <html lang="pt-BR">
 
 <head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9QRLC8PSPZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-9QRLC8PSPZ');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ber Digitall - Criação de Sites Profissionais | Soluções Digitais</title>
-    
+
     <!-- Meta Tags SEO -->
-    <meta name="description" content="Ber Digitall: Criação de sites profissionais, responsivos e estratégicos para empresas que desejam se destacar no universo digital. Solicite seu orçamento!">
-    <meta name="keywords" content="Ber Digitall, criação de sites, sites profissionais, design web, soluções digitais, SEO, marketing digital, desenvolvimento web, site responsivo">
+    <meta name="description"
+        content="Ber Digitall: Criação de sites profissionais, responsivos e estratégicos para empresas que desejam se destacar no universo digital. Solicite seu orçamento!">
+    <meta name="keywords"
+        content="Ber Digitall, criação de sites, sites profissionais, design web, soluções digitais, SEO, marketing digital, desenvolvimento web, site responsivo">
     <meta name="author" content="Ber Digitall">
     <meta name="robots" content="index, follow">
     <meta name="language" content="pt-BR">
     <meta name="revisit-after" content="7 days">
-    
+
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://berdigitall.vercel.app/">
     <meta property="og:title" content="Ber Digitall - Soluções Digitais para Empresas Modernas">
-    <meta property="og:description" content="Sites institucionais e estratégias digitais que geram resultados. Conheça a Ber Digitall!">
+    <meta property="og:description"
+        content="Sites institucionais e estratégias digitais que geram resultados. Conheça a Ber Digitall!">
     <meta property="og:image" content="https://berdigitall.vercel.app/images/preview.jpg">
     <meta property="og:site_name" content="Ber Digitall">
-    
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Ber Digitall - Soluções Digitais">
     <meta name="twitter:description" content="Criação de sites profissionais e estratégias digitais para seu negócio">
-    
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://berdigitall.vercel.app/">
-    
+
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    
+
     <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
         /* Reset e Estilos Base - Design Clean Branco com RGB */
         :root {
@@ -68,54 +83,59 @@
             --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
             --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         html {
             scroll-behavior: smooth;
             font-size: 16px;
         }
-        
+
         body {
             font-family: 'Inter', sans-serif;
             background: var(--white);
             color: var(--gray-700);
             line-height: 1.6;
         }
-        
+
         /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
         }
-        
+
         /* Tipografia */
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-weight: 700;
             line-height: 1.2;
             color: var(--gray-800);
         }
-        
+
         h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
         }
-        
+
         h2 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
         }
-        
+
         h3 {
             font-size: 1.5rem;
             margin-bottom: 0.75rem;
         }
-        
+
         /* Botões */
         .btn {
             display: inline-block;
@@ -129,57 +149,57 @@
             font-size: 0.95rem;
             text-align: center;
         }
-        
+
         .btn-primary {
             background: var(--blue);
             color: var(--white);
         }
-        
+
         .btn-primary:hover {
             background: #2980b9;
             transform: translateY(-2px);
             box-shadow: var(--shadow-lg);
         }
-        
+
         .btn-secondary {
             background: transparent;
             border: 2px solid var(--blue);
             color: var(--blue);
         }
-        
+
         .btn-secondary:hover {
             background: var(--blue);
             color: var(--white);
         }
-        
+
         .btn-outline-red {
             background: transparent;
             border: 2px solid var(--red);
             color: var(--red);
         }
-        
+
         .btn-outline-red:hover {
             background: var(--red);
             color: var(--white);
         }
-        
+
         .btn-large {
             padding: 14px 36px;
             font-size: 1rem;
         }
-        
+
         /* Section Title */
         .section-title {
             text-align: center;
             margin-bottom: 56px;
         }
-        
+
         .section-title h2 {
             display: inline-block;
             position: relative;
             color: var(--gray-800);
         }
-        
+
         .section-title h2::after {
             content: '';
             position: absolute;
@@ -191,7 +211,7 @@
             background: linear-gradient(90deg, var(--red), var(--green), var(--blue));
             border-radius: 3px;
         }
-        
+
         /* Header */
         header {
             position: fixed;
@@ -202,7 +222,7 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
         }
-        
+
         .header-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -211,22 +231,22 @@
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo {
             height: 48px;
             transition: opacity 0.3s ease;
         }
-        
+
         .logo:hover {
             opacity: 0.8;
         }
-        
+
         nav ul {
             display: flex;
             list-style: none;
             gap: 32px;
         }
-        
+
         nav ul li a {
             color: var(--white);
             text-decoration: none;
@@ -234,7 +254,7 @@
             transition: opacity 0.3s ease;
             position: relative;
         }
-        
+
         nav ul li a::after {
             content: '';
             position: absolute;
@@ -245,15 +265,15 @@
             background: var(--white);
             transition: width 0.3s ease;
         }
-        
+
         nav ul li a:hover::after {
             width: 100%;
         }
-        
+
         nav ul li a:hover {
             opacity: 0.9;
         }
-        
+
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -262,7 +282,7 @@
             font-size: 1.5rem;
             cursor: pointer;
         }
-        
+
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -271,13 +291,13 @@
             padding-top: 80px;
             background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 100%);
         }
-        
+
         .hero-content {
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
         }
-        
+
         .hero h1 {
             background: linear-gradient(135deg, var(--red), var(--green), var(--blue));
             -webkit-background-clip: text;
@@ -285,31 +305,31 @@
             background-clip: text;
             margin-bottom: 20px;
         }
-        
+
         .hero p {
             font-size: 1.2rem;
             max-width: 600px;
             margin: 0 auto 32px;
             color: var(--gray-500);
         }
-        
+
         /* Why Site Section */
         .why-site {
             padding: 80px 0;
             background: var(--white);
         }
-        
+
         .why-site-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
         }
-        
+
         .why-site-header {
             text-align: center;
             margin-bottom: 56px;
         }
-        
+
         .why-site-badge {
             display: inline-block;
             background: linear-gradient(135deg, var(--red-light), var(--green-light), var(--blue-light));
@@ -320,26 +340,26 @@
             font-weight: 600;
             margin-bottom: 20px;
         }
-        
+
         .why-site-header h2 {
             font-size: 2.2rem;
             color: var(--gray-800);
         }
-        
+
         .why-site-header .highlight {
             background: linear-gradient(135deg, var(--red), var(--green), var(--blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         .why-site-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 32px;
             margin-bottom: 56px;
         }
-        
+
         .why-site-card {
             background: var(--white);
             border: 1px solid var(--gray-200);
@@ -347,18 +367,18 @@
             padding: 32px;
             transition: all 0.3s ease;
         }
-        
+
         .why-site-card:hover {
             transform: translateY(-4px);
             box-shadow: var(--shadow-xl);
             border-color: transparent;
         }
-        
+
         .why-site-card.featured {
             border-top: 4px solid var(--green);
             position: relative;
         }
-        
+
         .featured-tag {
             position: absolute;
             top: -12px;
@@ -370,22 +390,22 @@
             font-size: 0.7rem;
             font-weight: 600;
         }
-        
+
         .why-site-icon {
             font-size: 2.5rem;
             margin-bottom: 20px;
         }
-        
+
         .why-site-card h3 {
             color: var(--gray-800);
             margin-bottom: 12px;
         }
-        
+
         .why-site-card p {
             color: var(--gray-500);
             line-height: 1.6;
         }
-        
+
         .why-site-cta {
             text-align: center;
             background: var(--gray-50);
@@ -393,23 +413,23 @@
             padding: 48px;
             border: 1px solid var(--gray-200);
         }
-        
+
         .why-site-cta p {
             font-size: 1.2rem;
             margin-bottom: 28px;
             color: var(--gray-600);
         }
-        
+
         .why-site-cta p strong {
             color: var(--red);
         }
-        
+
         /* About Section */
         #sobre {
             padding: 80px 0;
             background: var(--gray-50);
         }
-        
+
         .about-content {
             max-width: 1200px;
             margin: 0 auto;
@@ -418,49 +438,49 @@
             align-items: center;
             gap: 60px;
         }
-        
+
         .about-text {
             flex: 1;
         }
-        
+
         .about-text h3 {
             color: var(--blue);
             margin-bottom: 16px;
         }
-        
+
         .about-text p {
             color: var(--gray-600);
             margin-bottom: 16px;
         }
-        
+
         .about-image {
             flex: 1;
             position: relative;
         }
-        
+
         .about-image img {
             width: 100%;
             border-radius: 20px;
             box-shadow: var(--shadow-xl);
             transition: transform 0.3s ease;
         }
-        
+
         .about-image:hover img {
             transform: scale(1.02);
         }
-        
+
         /* History Section */
         #historia {
             padding: 80px 0;
             background: var(--white);
         }
-        
+
         .history-timeline {
             max-width: 800px;
             margin: 0 auto;
             position: relative;
         }
-        
+
         .history-timeline::before {
             content: '';
             position: absolute;
@@ -470,12 +490,12 @@
             height: 100%;
             background: linear-gradient(to bottom, var(--red), var(--green), var(--blue));
         }
-        
+
         .timeline-item {
             margin-bottom: 48px;
             position: relative;
         }
-        
+
         .timeline-item::before {
             content: '';
             position: absolute;
@@ -487,7 +507,7 @@
             background: var(--blue);
             top: 0;
         }
-        
+
         .timeline-content {
             width: calc(50% - 40px);
             padding: 24px;
@@ -496,40 +516,40 @@
             border: 1px solid var(--gray-200);
             transition: all 0.3s ease;
         }
-        
+
         .timeline-content:hover {
             box-shadow: var(--shadow-lg);
         }
-        
+
         .timeline-item:nth-child(odd) .timeline-content {
             margin-left: auto;
         }
-        
+
         .timeline-content h3 {
             color: var(--green);
             margin-bottom: 8px;
         }
-        
+
         .timeline-content p {
             color: var(--gray-500);
         }
-        
+
         /* Testimonials Section */
         #depoimentos {
             padding: 80px 0;
             background: var(--gray-50);
         }
-        
+
         .testimonials {
             max-width: 800px;
             margin: 0 auto;
         }
-        
+
         .testimonial-carousel {
             position: relative;
             min-height: 320px;
         }
-        
+
         .testimonial-slide {
             position: absolute;
             top: 0;
@@ -544,12 +564,12 @@
             border: 1px solid var(--gray-200);
             box-shadow: var(--shadow-md);
         }
-        
+
         .testimonial-slide.active {
             opacity: 1;
             position: relative;
         }
-        
+
         .testimonial-image {
             width: 80px;
             height: 80px;
@@ -558,25 +578,25 @@
             margin-bottom: 20px;
             border: 3px solid var(--blue);
         }
-        
+
         .testimonial-text {
             font-style: italic;
             margin-bottom: 20px;
             color: var(--gray-600);
         }
-        
+
         .testimonial-author {
             color: var(--green);
             font-weight: 600;
         }
-        
+
         .carousel-dots {
             display: flex;
             justify-content: center;
             gap: 10px;
             margin-top: 30px;
         }
-        
+
         .dot {
             width: 10px;
             height: 10px;
@@ -585,30 +605,30 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        
+
         .dot.active {
             background: var(--blue);
             transform: scale(1.2);
         }
-        
+
         /* Portfolio Section */
         #portfolio {
             padding: 80px 0;
             background: var(--white);
         }
-        
+
         .portfolio-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
         }
-        
+
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 32px;
         }
-        
+
         .portfolio-item {
             background: var(--white);
             border-radius: 16px;
@@ -616,32 +636,32 @@
             transition: all 0.3s ease;
             border: 1px solid var(--gray-200);
         }
-        
+
         .portfolio-item:hover {
             transform: translateY(-4px);
             box-shadow: var(--shadow-xl);
         }
-        
+
         .portfolio-image {
             width: 100%;
             height: 240px;
             object-fit: cover;
         }
-        
+
         .portfolio-info {
             padding: 24px;
         }
-        
+
         .portfolio-info h3 {
             color: var(--green);
             margin-bottom: 8px;
         }
-        
+
         .portfolio-info p {
             color: var(--gray-500);
             margin-bottom: 16px;
         }
-        
+
         /* Stats */
         .stats {
             max-width: 1200px;
@@ -652,7 +672,7 @@
             gap: 24px;
             text-align: center;
         }
-        
+
         .stat-item {
             padding: 32px;
             background: var(--gray-50);
@@ -660,12 +680,12 @@
             border: 1px solid var(--gray-200);
             transition: all 0.3s ease;
         }
-        
+
         .stat-item:hover {
             transform: translateY(-4px);
             box-shadow: var(--shadow-lg);
         }
-        
+
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
@@ -675,19 +695,19 @@
             background-clip: text;
             margin-bottom: 8px;
         }
-        
+
         .stat-text {
             color: var(--gray-500);
             font-size: 0.9rem;
         }
-        
+
         /* Evolution Message */
         .evolution-message {
             padding: 60px 0;
             background: linear-gradient(135deg, var(--red-light), var(--green-light), var(--blue-light));
             text-align: center;
         }
-        
+
         .evolution-content i {
             font-size: 3rem;
             background: linear-gradient(135deg, var(--red), var(--green), var(--blue));
@@ -696,39 +716,39 @@
             background-clip: text;
             margin-bottom: 20px;
         }
-        
+
         .evolution-content h3 {
             color: var(--gray-800);
             margin-bottom: 12px;
         }
-        
+
         .evolution-content p {
             max-width: 600px;
             margin: 0 auto;
             color: var(--gray-600);
         }
-        
+
         /* Tools Section */
         .tools-section {
             padding: 60px 0;
             background: var(--white);
         }
-        
+
         .tools-carousel {
             overflow: hidden;
             padding: 20px 0;
         }
-        
+
         .tools-track {
             display: flex;
             gap: 24px;
             animation: scrollTools 40s linear infinite;
         }
-        
+
         .tools-track:hover {
             animation-play-state: paused;
         }
-        
+
         .tool-item {
             min-width: 240px;
             background: var(--white);
@@ -740,13 +760,13 @@
             gap: 16px;
             transition: all 0.3s ease;
         }
-        
+
         .tool-item:hover {
             border-color: var(--blue);
             box-shadow: var(--shadow-md);
             transform: translateY(-2px);
         }
-        
+
         .tool-icon {
             width: 48px;
             height: 48px;
@@ -757,59 +777,64 @@
             justify-content: center;
             overflow: hidden;
         }
-        
+
         .tool-logo {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        
+
         .tool-info h3 {
             color: var(--blue);
             font-size: 1rem;
             margin-bottom: 4px;
         }
-        
+
         .tool-info p {
             color: var(--gray-400);
             font-size: 0.8rem;
         }
-        
+
         .tools-note {
             text-align: center;
             color: var(--gray-400);
             margin-top: 40px;
             font-size: 0.85rem;
         }
-        
+
         @keyframes scrollTools {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
         }
-        
+
         /* Contact Section */
         #contato {
             padding: 80px 0;
             background: var(--gray-50);
         }
-        
+
         .contact-form {
             max-width: 600px;
             margin: 0 auto;
             padding: 0 24px;
         }
-        
+
         .form-group {
             margin-bottom: 24px;
         }
-        
+
         .form-group label {
             display: block;
             margin-bottom: 8px;
             color: var(--gray-700);
             font-weight: 500;
         }
-        
+
         .form-control {
             width: 100%;
             padding: 12px 16px;
@@ -820,18 +845,18 @@
             font-family: 'Inter', sans-serif;
             transition: all 0.3s ease;
         }
-        
+
         .form-control:focus {
             outline: none;
             border-color: var(--blue);
             box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
         }
-        
+
         textarea.form-control {
             min-height: 120px;
             resize: vertical;
         }
-        
+
         .form-feedback {
             margin-top: 20px;
             padding: 12px;
@@ -839,25 +864,25 @@
             text-align: center;
             display: none;
         }
-        
+
         /* Footer */
         footer {
             background: var(--gray-900);
             padding: 48px 24px 32px;
             color: var(--gray-400);
         }
-        
+
         .footer-container {
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
         }
-        
+
         .footer-logo {
             height: 48px;
             margin-bottom: 24px;
         }
-        
+
         .footer-links {
             display: flex;
             justify-content: center;
@@ -865,24 +890,24 @@
             margin-bottom: 32px;
             flex-wrap: wrap;
         }
-        
+
         .footer-links a {
             color: var(--gray-400);
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        
+
         .footer-links a:hover {
             color: var(--blue);
         }
-        
+
         .social-links {
             display: flex;
             justify-content: center;
             gap: 16px;
             margin-bottom: 32px;
         }
-        
+
         .social-links a {
             width: 40px;
             height: 40px;
@@ -895,18 +920,18 @@
             text-decoration: none;
             transition: all 0.3s ease;
         }
-        
+
         .social-links a:hover {
             background: var(--blue);
             color: var(--white);
             transform: translateY(-2px);
         }
-        
+
         .copyright {
             color: var(--gray-500);
             font-size: 0.85rem;
         }
-        
+
         /* WhatsApp Button */
         .whatsapp-btn {
             position: fixed;
@@ -926,21 +951,26 @@
             box-shadow: var(--shadow-lg);
             text-decoration: none;
         }
-        
+
         .whatsapp-btn:hover {
             transform: scale(1.1);
             background: #27ae60;
         }
-        
+
         /* Responsividade */
         @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            h2 { font-size: 1.75rem; }
-            
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
             .mobile-menu-btn {
                 display: block;
             }
-            
+
             nav ul {
                 position: fixed;
                 top: 80px;
@@ -955,51 +985,51 @@
                 gap: 32px;
                 border-top: 1px solid rgba(255, 255, 255, 0.1);
             }
-            
+
             nav ul.active {
                 left: 0;
             }
-            
+
             .about-content {
                 flex-direction: column;
                 text-align: center;
             }
-            
+
             .history-timeline::before {
                 left: 24px;
             }
-            
+
             .timeline-item::before {
                 left: 24px;
             }
-            
+
             .timeline-content {
                 width: calc(100% - 60px);
                 margin-left: 60px !important;
             }
-            
+
             .portfolio-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .stats {
                 grid-template-columns: 1fr 1fr;
             }
-            
+
             .why-site-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .why-site-cta {
                 padding: 32px 24px;
             }
         }
-        
+
         @media (max-width: 480px) {
             .stats {
                 grid-template-columns: 1fr;
             }
-            
+
             .btn-large {
                 padding: 12px 24px;
                 font-size: 0.9rem;
@@ -1036,7 +1066,8 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Tecnologia acessível para todos</h1>
-                <p>Na Ber Digitall, criamos sites básicos, responsivos e seguros por um preço justo, porque acreditamos que toda empresa merece ter sua presença online.</p>
+                <p>Na Ber Digitall, criamos sites básicos, responsivos e seguros por um preço justo, porque acreditamos
+                    que toda empresa merece ter sua presença online.</p>
                 <a href="#contato" class="btn btn-primary">Solicitar Orçamento</a>
             </div>
         </div>
@@ -1083,7 +1114,8 @@
                 </div>
             </div>
             <div class="why-site-cta">
-                <p><strong>Não fique para trás!</strong> Enquanto você lê isso, alguém está procurando exatamente o que você vende.</p>
+                <p><strong>Não fique para trás!</strong> Enquanto você lê isso, alguém está procurando exatamente o que
+                    você vende.</p>
                 <a href="#contato" class="btn btn-primary btn-large">CRIAR MEU SITE AGORA</a>
             </div>
         </div>
@@ -1098,9 +1130,14 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>Tiago Bernardes</h3>
-                    <p>Olá! Sou Tiago Bernardes, fundador da Ber Digitall. Sou apaixonado por tecnologia, corrida de rua amadora e aviação civil. Minha missão é democratizar o acesso a sites responsivos, robustos e seguros para pequenos negócios e empreendedores.</p>
-                    <p>Com uma abordagem moderna e utilizando inteligências artificiais como auxiliares no desenvolvimento, consigo oferecer sites de alta qualidade por preços acessíveis, sem comprometer a segurança ou o design.</p>
-                    <p>Trabalho remotamente e me orgulho de oferecer um atendimento personalizado, entendendo as necessidades de cada cliente para criar a solução perfeita para o seu negócio.</p>
+                    <p>Olá! Sou Tiago Bernardes, fundador da Ber Digitall. Sou apaixonado por tecnologia, corrida de rua
+                        amadora e aviação civil. Minha missão é democratizar o acesso a sites responsivos, robustos e
+                        seguros para pequenos negócios e empreendedores.</p>
+                    <p>Com uma abordagem moderna e utilizando inteligências artificiais como auxiliares no
+                        desenvolvimento, consigo oferecer sites de alta qualidade por preços acessíveis, sem comprometer
+                        a segurança ou o design.</p>
+                    <p>Trabalho remotamente e me orgulho de oferecer um atendimento personalizado, entendendo as
+                        necessidades de cada cliente para criar a solução perfeita para o seu negócio.</p>
                 </div>
                 <div class="about-image">
                     <img src="imagemtiago.jpeg" alt="Tiago Bernardes, fundador da Ber Digitall" loading="lazy">
@@ -1119,25 +1156,29 @@
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>2023 - O Início</h3>
-                        <p>Comecei a estudar desenvolvimento web por conta própria, motivado pela paixão por tecnologia e pelo desejo de criar soluções digitais acessíveis.</p>
+                        <p>Comecei a estudar desenvolvimento web por conta própria, motivado pela paixão por tecnologia
+                            e pelo desejo de criar soluções digitais acessíveis.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>2024 - Primeiros Projetos</h3>
-                        <p>Desenvolvi meus primeiros sites para amigos e familiares, descobrindo a satisfação de ajudar pequenos negócios a se estabelecerem online.</p>
+                        <p>Desenvolvi meus primeiros sites para amigos e familiares, descobrindo a satisfação de ajudar
+                            pequenos negócios a se estabelecerem online.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>2025 - Nascimento da Ber Digitall</h3>
-                        <p>Fundei a Ber Digitall com o objetivo de oferecer sites básicos, seguros e robustos a preços acessíveis, utilizando tecnologias modernas.</p>
+                        <p>Fundei a Ber Digitall com o objetivo de oferecer sites básicos, seguros e robustos a preços
+                            acessíveis, utilizando tecnologias modernas.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>Atualmente - Primeiros projetos</h3>
-                        <p>Atendi 5 clientes até o momento que ficaram satisfeitos com os sites entregues, comprovando que é possível oferecer qualidade sem custos exorbitantes.</p>
+                        <p>Atendi 5 clientes até o momento que ficaram satisfeitos com os sites entregues, comprovando
+                            que é possível oferecer qualidade sem custos exorbitantes.</p>
                     </div>
                 </div>
             </div>
@@ -1154,7 +1195,9 @@
                 <div class="testimonial-carousel">
                     <div class="testimonial-slide active">
                         <img src="imagemjessicapets.png" alt="Jéssica" class="testimonial-image" loading="lazy">
-                        <p class="testimonial-text">"Precisava urgentemente de um site para minha loja de pet shop recém inaugurada. O Tiago e a Ber Digitall superaram minhas expectativas e muitos clientes estão me encontrando pelo site."</p>
+                        <p class="testimonial-text">"Precisava urgentemente de um site para minha loja de pet shop recém
+                            inaugurada. O Tiago e a Ber Digitall superaram minhas expectativas e muitos clientes estão
+                            me encontrando pelo site."</p>
                         <p class="testimonial-author">Jéssica - Pet Shop Jéssica Pets</p>
                     </div>
                 </div>
@@ -1177,7 +1220,8 @@
                     <div class="portfolio-info">
                         <h3>Jéssica Pets</h3>
                         <p>Site completo que mostra o pet shop da Jéssica recém inaugurado em São Miguel Paulista.</p>
-                        <a href="http://jessicapets.vercel.app" class="btn btn-secondary" target="_blank" rel="noopener">Visite o Site</a>
+                        <a href="http://jessicapets.vercel.app" class="btn btn-secondary" target="_blank"
+                            rel="noopener">Visite o Site</a>
                     </div>
                 </div>
             </div>
@@ -1208,7 +1252,8 @@
             <div class="evolution-content">
                 <i class="fas fa-rocket"></i>
                 <h3>Em constante evolução</h3>
-                <p>Estamos sempre aprendendo, nos atualizando e buscando novas formas de atender cada vez melhor nossos clientes. Cada projeto é uma oportunidade de crescer juntos!</p>
+                <p>Estamos sempre aprendendo, nos atualizando e buscando novas formas de atender cada vez melhor nossos
+                    clientes. Cada projeto é uma oportunidade de crescer juntos!</p>
             </div>
         </div>
     </section>
@@ -1221,15 +1266,61 @@
             </div>
             <div class="tools-carousel">
                 <div class="tools-track" id="toolsTrack">
-                    <div class="tool-item"><div class="tool-icon"><img src="https://cdn.simpleicons.org/deepseek" alt="DeepSeek" class="tool-logo"></div><div class="tool-info"><h3>DeepSeek</h3><p>IA para desenvolvimento</p></div></div>
-                    <div class="tool-item"><div class="tool-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT" class="tool-logo"></div><div class="tool-info"><h3>ChatGPT</h3><p>Assistente inteligente</p></div></div>
-                    <div class="tool-item"><div class="tool-icon"><img src="https://cdn.simpleicons.org/githubcopilot" alt="GitHub Copilot" class="tool-logo"></div><div class="tool-info"><h3>GitHub Copilot</h3><p>Programação assistida</p></div></div>
-                    <div class="tool-item"><div class="tool-icon"><img src="https://cdn.simpleicons.org/visualstudiocode" alt="VS Code" class="tool-logo"></div><div class="tool-info"><h3>VS Code</h3><p>Editor de código</p></div></div>
-                    <div class="tool-item"><div class="tool-icon"><img src="https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png" alt="Vercel" class="tool-logo"></div><div class="tool-info"><h3>Vercel</h3><p>Hospedagem</p></div></div>
-                    <div class="tool-item"><div class="tool-icon"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="tool-logo"></div><div class="tool-info"><h3>GitHub</h3><p>Versionamento</p></div></div>
+                    <div class="tool-item">
+                        <div class="tool-icon"><img src="https://cdn.simpleicons.org/deepseek" alt="DeepSeek"
+                                class="tool-logo"></div>
+                        <div class="tool-info">
+                            <h3>DeepSeek</h3>
+                            <p>IA para desenvolvimento</p>
+                        </div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon"><img
+                                src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT"
+                                class="tool-logo"></div>
+                        <div class="tool-info">
+                            <h3>ChatGPT</h3>
+                            <p>Assistente inteligente</p>
+                        </div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon"><img src="https://cdn.simpleicons.org/githubcopilot" alt="GitHub Copilot"
+                                class="tool-logo"></div>
+                        <div class="tool-info">
+                            <h3>GitHub Copilot</h3>
+                            <p>Programação assistida</p>
+                        </div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon"><img src="https://cdn.simpleicons.org/visualstudiocode" alt="VS Code"
+                                class="tool-logo"></div>
+                        <div class="tool-info">
+                            <h3>VS Code</h3>
+                            <p>Editor de código</p>
+                        </div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon"><img
+                                src="https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png"
+                                alt="Vercel" class="tool-logo"></div>
+                        <div class="tool-info">
+                            <h3>Vercel</h3>
+                            <p>Hospedagem</p>
+                        </div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon"><img
+                                src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                                alt="GitHub" class="tool-logo"></div>
+                        <div class="tool-info">
+                            <h3>GitHub</h3>
+                            <p>Versionamento</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <p class="tools-note">Sites responsivos e modernos utilizando as melhores tecnologias e Inteligências Artificiais.</p>
+            <p class="tools-note">Sites responsivos e modernos utilizando as melhores tecnologias e Inteligências
+                Artificiais.</p>
         </div>
     </section>
 
@@ -1281,8 +1372,10 @@
                 <a href="#contato">Contato</a>
             </div>
             <div class="social-links">
-                <a href="https://wa.me/5511993335167?text=Olá, eu visitei o seu site e gostaria de saber mais." target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://instagram.com/ber.digitall" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/5511993335167?text=Olá, eu visitei o seu site e gostaria de saber mais."
+                    target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://instagram.com/ber.digitall" target="_blank" rel="noopener" aria-label="Instagram"><i
+                        class="fab fa-instagram"></i></a>
                 <a href="mailto:ber.digitall@gmail.com" aria-label="Email"><i class="far fa-envelope"></i></a>
             </div>
             <div class="copyright">
@@ -1292,24 +1385,25 @@
     </footer>
 
     <!-- Botão WhatsApp -->
-    <a href="https://wa.me/5511993335167?text=Olá, eu visitei o seu site e gostaria de saber mais." class="whatsapp-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <a href="https://wa.me/5511993335167?text=Olá, eu visitei o seu site e gostaria de saber mais." class="whatsapp-btn"
+        target="_blank" rel="noopener" aria-label="WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Menu mobile
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const navMenu = document.getElementById('nav-menu');
-            
+
             if (mobileMenuBtn) {
-                mobileMenuBtn.addEventListener('click', function() {
+                mobileMenuBtn.addEventListener('click', function () {
                     navMenu.classList.toggle('active');
                     const isExpanded = this.getAttribute('aria-expanded') === 'true';
                     this.setAttribute('aria-expanded', !isExpanded);
                 });
             }
-            
+
             // Calcular experiência
             function calcularExperiencia() {
                 const dataInicio = new Date('2025-09-13');
@@ -1331,13 +1425,13 @@
                 }
             }
             calcularExperiencia();
-            
+
             // Ano no footer
             document.getElementById('currentYear').textContent = new Date().getFullYear();
-            
+
             // Scroll suave
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
+                anchor.addEventListener('click', function (e) {
                     e.preventDefault();
                     const targetId = this.getAttribute('href');
                     if (targetId === '#') return;
@@ -1349,11 +1443,11 @@
                     }
                 });
             });
-            
+
             // Formulário WhatsApp
             const contactForm = document.getElementById('contactForm');
             if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
+                contactForm.addEventListener('submit', function (e) {
                     e.preventDefault();
                     const nome = document.getElementById('name').value;
                     const empresa = document.getElementById('business').value;
@@ -1379,7 +1473,7 @@
                     }, 2000);
                 });
             }
-            
+
             // Animação ao scroll
             const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
             const observer = new IntersectionObserver((entries) => {
@@ -1397,7 +1491,7 @@
                 observer.observe(el);
             });
         });
-        
+
         function currentSlide(n) {
             const slides = document.querySelectorAll('.testimonial-slide');
             const dots = document.querySelectorAll('.dot');
