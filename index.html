@@ -792,26 +792,31 @@
             color: var(--gray-600);
         }
 
-        /* Tools Section */
+        /* Tools Section - Carrossel corrigido sem duplicação */
         .tools-section {
             padding: 60px 0;
             background: var(--white);
+            overflow: hidden;
         }
 
         .tools-carousel {
             overflow: hidden;
             padding: 20px 0;
+            position: relative;
+            width: 100%;
+            cursor: grab;
+        }
+
+        .tools-carousel:active {
+            cursor: grabbing;
         }
 
         .tools-track {
             display: flex;
             gap: 24px;
-            animation: scrollTools 40s linear infinite;
+            transition: transform 0.5s ease-out;
             width: fit-content;
-        }
-
-        .tools-track:hover {
-            animation-play-state: paused;
+            will-change: transform;
         }
 
         .tool-item {
@@ -866,16 +871,6 @@
             color: var(--gray-400);
             margin-top: 40px;
             font-size: 0.85rem;
-        }
-
-        @keyframes scrollTools {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(-50%);
-            }
         }
 
         /* Contact Section */
@@ -1416,66 +1411,14 @@
         </div>
     </section>
 
-    <!-- Ferramentas e IAs -->
+    <!-- Ferramentas e IAs - Carrossel corrigido -->
     <section class="tools-section" aria-labelledby="tools-title">
         <div class="container">
             <div class="section-title">
                 <h2 id="tools-title">Tecnologias que potencializam nossos projetos</h2>
             </div>
-            <div class="tools-carousel">
+            <div class="tools-carousel" id="toolsCarousel">
                 <div class="tools-track" id="toolsTrack">
-                    <div class="tool-item">
-                        <div class="tool-icon"><img src="https://cdn.simpleicons.org/deepseek" alt="DeepSeek Logo"
-                                class="tool-logo" loading="lazy" width="48" height="48"></div>
-                        <div class="tool-info">
-                            <h3>DeepSeek</h3>
-                            <p>IA para desenvolvimento</p>
-                        </div>
-                    </div>
-                    <div class="tool-item">
-                        <div class="tool-icon"><img
-                                src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT Logo"
-                                class="tool-logo" loading="lazy" width="48" height="48"></div>
-                        <div class="tool-info">
-                            <h3>ChatGPT</h3>
-                            <p>Assistente inteligente</p>
-                        </div>
-                    </div>
-                    <div class="tool-item">
-                        <div class="tool-icon"><img src="https://cdn.simpleicons.org/githubcopilot" alt="GitHub Copilot Logo"
-                                class="tool-logo" loading="lazy" width="48" height="48"></div>
-                        <div class="tool-info">
-                            <h3>GitHub Copilot</h3>
-                            <p>Programação assistida</p>
-                        </div>
-                    </div>
-                    <div class="tool-item">
-                        <div class="tool-icon"><img src="https://cdn.simpleicons.org/visualstudiocode" alt="VS Code Logo"
-                                class="tool-logo" loading="lazy" width="48" height="48"></div>
-                        <div class="tool-info">
-                            <h3>VS Code</h3>
-                            <p>Editor de código</p>
-                        </div>
-                    </div>
-                    <div class="tool-item">
-                        <div class="tool-icon"><img
-                                src="https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png"
-                                alt="Vercel Logo" class="tool-logo" loading="lazy" width="48" height="48"></div>
-                        <div class="tool-info">
-                            <h3>Vercel</h3>
-                            <p>Hospedagem</p>
-                        </div>
-                    </div>
-                    <div class="tool-item">
-                        <div class="tool-icon"><img
-                                src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
-                                alt="GitHub Logo" class="tool-logo" loading="lazy" width="48" height="48"></div>
-                        <div class="tool-info">
-                            <h3>GitHub</h3>
-                            <p>Versionamento</p>
-                        </div>
-                    </div>
-                    <!-- Duplicação para efeito de scroll infinito -->
                     <div class="tool-item">
                         <div class="tool-icon"><img src="https://cdn.simpleicons.org/deepseek" alt="DeepSeek Logo"
                                 class="tool-logo" loading="lazy" width="48" height="48"></div>
@@ -1723,6 +1666,137 @@
                 });
             }
 
+            // ==================== CARROSSEL INFINITO CORRIGIDO ====================
+            function initInfiniteCarousel() {
+                const track = document.getElementById('toolsTrack');
+                const carousel = document.getElementById('toolsCarousel');
+                if (!track || !carousel) return;
+                
+                let isDragging = false;
+                let startX = 0;
+                let currentTranslate = 0;
+                let prevTranslate = 0;
+                let autoScrollInterval = null;
+                let isPaused = false;
+                
+                // Clona os itens para o efeito infinito (clonagem técnica no DOM, mas não duplicação visual no HTML fonte)
+                const items = Array.from(track.children);
+                if (items.length > 0) {
+                    // Clona todos os itens e adiciona ao final
+                    items.forEach(item => {
+                        const clone = item.cloneNode(true);
+                        track.appendChild(clone);
+                    });
+                }
+                
+                // Calcula a largura de um conjunto original
+                function getSetWidth() {
+                    const originalCount = items.length;
+                    if (originalCount === 0) return 0;
+                    const firstItem = items[0];
+                    const itemWidth = firstItem.offsetWidth + 24; // 24px é o gap
+                    return itemWidth * originalCount;
+                }
+                
+                let setWidth = getSetWidth();
+                let currentPosition = 0;
+                
+                // Auto-scroll
+                function startAutoScroll() {
+                    if (autoScrollInterval) clearInterval(autoScrollInterval);
+                    if (isPaused) return;
+                    
+                    autoScrollInterval = setInterval(() => {
+                        if (!isDragging && !isPaused) {
+                            currentPosition -= 1.5; // Velocidade suave
+                            
+                            // Reset infinito quando chegar ao fim
+                            if (Math.abs(currentPosition) >= setWidth) {
+                                currentPosition = 0;
+                            }
+                            
+                            track.style.transform = `translateX(${currentPosition}px)`;
+                        }
+                    }, 30);
+                }
+                
+                function stopAutoScroll() {
+                    if (autoScrollInterval) {
+                        clearInterval(autoScrollInterval);
+                        autoScrollInterval = null;
+                    }
+                }
+                
+                // Drag com mouse e toque
+                function dragStart(e) {
+                    stopAutoScroll();
+                    isDragging = true;
+                    startX = e.type === 'mousedown' ? e.pageX : e.touches[0].clientX;
+                    prevTranslate = currentPosition;
+                    track.style.transition = 'none';
+                    e.preventDefault();
+                }
+                
+                function dragMove(e) {
+                    if (!isDragging) return;
+                    const currentX = e.type === 'mousemove' ? e.pageX : e.touches[0].clientX;
+                    const diff = currentX - startX;
+                    let newPosition = prevTranslate + diff;
+                    
+                    // Efeito infinito - permite arrastar suavemente
+                    if (newPosition > 0) {
+                        newPosition = -setWidth + (newPosition % setWidth);
+                    }
+                    if (newPosition < -setWidth) {
+                        newPosition = 0;
+                    }
+                    
+                    currentPosition = newPosition;
+                    track.style.transform = `translateX(${currentPosition}px)`;
+                }
+                
+                function dragEnd() {
+                    if (!isDragging) return;
+                    isDragging = false;
+                    track.style.transition = 'transform 0.5s ease-out';
+                    startAutoScroll();
+                }
+                
+                // Eventos de mouse
+                carousel.addEventListener('mousedown', dragStart);
+                window.addEventListener('mousemove', dragMove);
+                window.addEventListener('mouseup', dragEnd);
+                
+                // Eventos de toque (mobile)
+                carousel.addEventListener('touchstart', dragStart);
+                window.addEventListener('touchmove', dragMove);
+                window.addEventListener('touchend', dragEnd);
+                
+                // Pausar auto-scroll ao passar o mouse
+                carousel.addEventListener('mouseenter', () => {
+                    isPaused = true;
+                    stopAutoScroll();
+                });
+                
+                carousel.addEventListener('mouseleave', () => {
+                    isPaused = false;
+                    startAutoScroll();
+                });
+                
+                // Iniciar auto-scroll
+                startAutoScroll();
+                
+                // Ajustar ao redimensionar a tela
+                window.addEventListener('resize', () => {
+                    setWidth = getSetWidth();
+                    currentPosition = 0;
+                    track.style.transform = `translateX(0)`;
+                });
+            }
+            
+            // Inicializar carrossel
+            initInfiniteCarousel();
+
             // Validação de formulário aprimorada
             const contactForm = document.getElementById('contactForm');
             if (contactForm) {
@@ -1856,18 +1930,6 @@
                 el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
                 observer.observe(el);
             });
-
-            // Carregamento de imagens lazy nativo + fallback
-            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-            if ('loading' in HTMLImageElement.prototype) {
-                // Navegador suporta lazy loading nativo
-                console.log('Lazy loading nativo suportado');
-            } else {
-                // Fallback para navegadores antigos
-                const lazyLoadScript = document.createElement('script');
-                lazyLoadScript.src = 'https://cdn.jsdelivr.net/npm/intersection-observer@0.12.0/intersection-observer.min.js';
-                document.body.appendChild(lazyLoadScript);
-            }
         });
 
         function currentSlide(n) {
