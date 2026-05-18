@@ -20,7 +20,6 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-9QRLC8PSPZ');
     </script>
 
@@ -37,6 +36,11 @@
     <meta name="robots" content="index, follow">
     <meta name="language" content="pt-BR">
     <meta name="revisit-after" content="7 days">
+    <meta name="theme-color" content="#0000FE">
+
+    <!-- Security Headers -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
 
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
@@ -46,6 +50,7 @@
         content="Sites institucionais e estratégias digitais que geram resultados. Conheça a Ber Digitall!">
     <meta property="og:image" content="https://berdigitall.com.br/images/preview.jpg">
     <meta property="og:site_name" content="Ber Digitall">
+    <meta property="og:locale" content="pt_BR">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -56,17 +61,52 @@
     <link rel="canonical" href="https://berdigitall.com.br/">
 
     <!-- Favicon -->
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
-    <!-- Fontes -->
+    <!-- Preconnect para otimização -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Fontes com display swap para evitar FOIT -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- JSON-LD Structured Data para SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Ber Digitall",
+        "url": "https://berdigitall.com.br/",
+        "logo": "https://berdigitall.com.br/logo_berdigitall2_230326.png",
+        "image": "https://berdigitall.com.br/imagemtiago.jpeg",
+        "description": "Criação de sites profissionais, responsivos e estratégicos para empresas que desejam se destacar no universo digital.",
+        "founder": {
+            "@type": "Person",
+            "name": "Tiago Bernardes"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "BR"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+5511993335167",
+            "contactType": "customer service",
+            "availableLanguage": ["Portuguese"]
+        },
+        "sameAs": [
+            "https://instagram.com/ber.digitall",
+            "https://wa.me/5511993335167"
+        ],
+        "priceRange": "$$"
+    }
+    </script>
 
     <style>
         /* Reset e Estilos Base - Design Clean Branco com RGB */
@@ -93,6 +133,7 @@
             --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
             --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
             --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+            --focus-ring: 0 0 0 3px rgba(52, 152, 219, 0.4);
         }
 
         * {
@@ -111,6 +152,13 @@
             background: var(--white);
             color: var(--gray-700);
             line-height: 1.6;
+        }
+
+        /* Focus visible para acessibilidade */
+        :focus-visible {
+            outline: 2px solid var(--blue);
+            outline-offset: 2px;
+            border-radius: 4px;
         }
 
         /* Container */
@@ -159,6 +207,10 @@
             border: none;
             font-size: 0.95rem;
             text-align: center;
+        }
+
+        .btn:focus-visible {
+            outline: var(--focus-ring);
         }
 
         .btn-primary {
@@ -471,6 +523,7 @@
 
         .about-image img {
             width: 100%;
+            max-width: 400px;
             border-radius: 20px;
             box-shadow: var(--shadow-xl);
             transition: transform 0.3s ease;
@@ -558,7 +611,7 @@
 
         .testimonial-carousel {
             position: relative;
-            min-height: 320px;
+            min-height: 380px;
         }
 
         .testimonial-slide {
@@ -754,6 +807,7 @@
             display: flex;
             gap: 24px;
             animation: scrollTools 40s linear infinite;
+            width: fit-content;
         }
 
         .tools-track:hover {
@@ -787,6 +841,7 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            flex-shrink: 0;
         }
 
         .tool-logo {
@@ -863,6 +918,17 @@
             box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
         }
 
+        .form-control.error {
+            border-color: var(--red);
+        }
+
+        .error-message {
+            color: var(--red);
+            font-size: 0.75rem;
+            margin-top: 4px;
+            display: block;
+        }
+
         textarea.form-control {
             min-height: 120px;
             resize: vertical;
@@ -874,6 +940,18 @@
             border-radius: 8px;
             text-align: center;
             display: none;
+        }
+
+        .form-feedback.success {
+            background: var(--green-light);
+            color: #27ae60;
+            display: block;
+        }
+
+        .form-feedback.error {
+            background: var(--red-light);
+            color: var(--red);
+            display: block;
         }
 
         /* Footer */
@@ -968,6 +1046,46 @@
             background: #27ae60;
         }
 
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 44px;
+            height: 44px;
+            background: var(--blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: var(--shadow-lg);
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            cursor: pointer;
+            border: none;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-2px);
+            background: #2980b9;
+        }
+
+        /* Loading state para botões */
+        .btn-loading {
+            opacity: 0.7;
+            cursor: wait;
+        }
+
         /* Responsividade */
         @media (max-width: 768px) {
             h1 {
@@ -1034,6 +1152,15 @@
             .why-site-cta {
                 padding: 32px 24px;
             }
+
+            .back-to-top {
+                bottom: 100px;
+                right: 20px;
+            }
+
+            .whatsapp-btn {
+                right: 20px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1046,6 +1173,18 @@
                 font-size: 0.9rem;
             }
         }
+
+        /* Prefers reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
     </style>
 </head>
 
@@ -1055,14 +1194,17 @@
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
+    <!-- Skip to content link para acessibilidade -->
+    <a href="#main-content" class="skip-link" style="position: absolute; top: -40px; left: 0; background: var(--blue); color: white; padding: 8px 16px; text-decoration: none; z-index: 1001;">Pular para o conteúdo principal</a>
+
     <!-- Header -->
     <header>
         <div class="header-container">
             <a href="#inicio" aria-label="Ir para o início">
-                <img src="logo_berdigitall2_230326.png" alt="Ber Digitall" class="logo" loading="lazy">
+                <img src="logo_berdigitall2_230326.png" alt="Ber Digitall - Logo" class="logo" loading="eager" width="auto" height="48">
             </a>
-            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu mobile" aria-expanded="false">
-                <i class="fas fa-bars"></i>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="nav-menu">
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
             <nav aria-label="Navegação principal">
                 <ul id="nav-menu">
@@ -1090,41 +1232,41 @@
     </section>
 
     <!-- Por que ter um site? -->
-    <section class="why-site">
+    <section class="why-site" aria-labelledby="why-site-title">
         <div class="why-site-container">
             <div class="why-site-header">
-                <span class="why-site-badge"><i class="fas fa-chart-line"></i> VOCÊ SABIA?</span>
-                <h2>Por que sua empresa <span class="highlight">PRECISA</span> de um site?</h2>
+                <span class="why-site-badge"><i class="fas fa-chart-line" aria-hidden="true"></i> VOCÊ SABIA?</span>
+                <h2 id="why-site-title">Por que sua empresa <span class="highlight">PRECISA</span> de um site?</h2>
             </div>
             <div class="why-site-grid">
                 <div class="why-site-card">
-                    <div class="why-site-icon"><i class="fas fa-eye-slash"></i></div>
+                    <div class="why-site-icon" aria-hidden="true"><i class="fas fa-eye-slash"></i></div>
                     <h3>Você não existe online</h3>
                     <p>87% dos consumidores pesquisam na internet antes de comprar. Sem site, você é invisível.</p>
                 </div>
                 <div class="why-site-card featured">
-                    <div class="why-site-icon"><i class="fas fa-clock"></i></div>
+                    <div class="why-site-icon" aria-hidden="true"><i class="fas fa-clock"></i></div>
                     <h3>Funciona 24 horas por dia</h3>
                     <p>Enquanto você dorme, seu site trabalha: recebe mensagens e capta clientes automaticamente.</p>
                     <div class="featured-tag">MAIS IMPORTANTE</div>
                 </div>
                 <div class="why-site-card">
-                    <div class="why-site-icon"><i class="fas fa-coins"></i></div>
+                    <div class="why-site-icon" aria-hidden="true"><i class="fas fa-coins"></i></div>
                     <h3>Melhor custo-benefício</h3>
                     <p>Por menos que um almoço por mês, você tem uma ferramenta profissional que traz clientes.</p>
                 </div>
                 <div class="why-site-card">
-                    <div class="why-site-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="why-site-icon" aria-hidden="true"><i class="fas fa-shield-alt"></i></div>
                     <h3>Passa credibilidade</h3>
                     <p>Empresa sem site parece amadora. Com um site profissional, você ganha confiança.</p>
                 </div>
                 <div class="why-site-card">
-                    <div class="why-site-icon"><i class="fas fa-bullseye"></i></div>
+                    <div class="why-site-icon" aria-hidden="true"><i class="fas fa-bullseye"></i></div>
                     <h3>Seus clientes estão online</h3>
                     <p>Seu concorrente tem site. Ficar de fora é entregar clientes para a concorrência.</p>
                 </div>
                 <div class="why-site-card">
-                    <div class="why-site-icon"><i class="fas fa-chart-simple"></i></div>
+                    <div class="why-site-icon" aria-hidden="true"><i class="fas fa-chart-simple"></i></div>
                     <h3>Você controla tudo</h3>
                     <p>Diferente das redes sociais, você não está refém de algoritmos. O site é SEU.</p>
                 </div>
@@ -1138,10 +1280,10 @@
     </section>
 
     <!-- Sobre -->
-    <section id="sobre">
+    <section id="sobre" aria-labelledby="sobre-title">
         <div class="container">
             <div class="section-title">
-                <h2>Sobre</h2>
+                <h2 id="sobre-title">Sobre</h2>
             </div>
             <div class="about-content">
                 <div class="about-text">
@@ -1156,17 +1298,17 @@
                         necessidades de cada cliente para criar a solução perfeita para o seu negócio.</p>
                 </div>
                 <div class="about-image">
-                    <img src="imagemtiago.jpeg" alt="Tiago Bernardes, fundador da Ber Digitall" loading="lazy">
+                    <img src="imagemtiago.jpeg" alt="Tiago Bernardes, fundador da Ber Digitall" loading="lazy" width="400" height="400">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- História -->
-    <section id="historia">
+    <section id="historia" aria-labelledby="historia-title">
         <div class="container">
             <div class="section-title">
-                <h2>História</h2>
+                <h2 id="historia-title">História</h2>
             </div>
             <div class="history-timeline">
                 <div class="timeline-item">
@@ -1202,52 +1344,52 @@
     </section>
 
     <!-- Depoimentos -->
-    <section id="depoimentos">
+    <section id="depoimentos" aria-labelledby="depoimentos-title">
         <div class="container">
             <div class="section-title">
-                <h2>Depoimento</h2>
+                <h2 id="depoimentos-title">Depoimento</h2>
             </div>
             <div class="testimonials">
-                <div class="testimonial-carousel">
-                    <div class="testimonial-slide active">
-                        <img src="imagemjessicapets.png" alt="Jéssica" class="testimonial-image" loading="lazy">
+                <div class="testimonial-carousel" id="testimonialCarousel">
+                    <div class="testimonial-slide active" role="tabpanel" aria-label="Depoimento 1 de 1">
+                        <img src="imagemjessicapets.png" alt="Jéssica - Pet Shop Jéssica Pets" class="testimonial-image" loading="lazy" width="80" height="80">
                         <p class="testimonial-text">"Precisava urgentemente de um site para minha loja de pet shop recém
                             inaugurada. O Tiago e a Ber Digitall superaram minhas expectativas e muitos clientes estão
                             me encontrando pelo site."</p>
                         <p class="testimonial-author">Jéssica - Pet Shop Jéssica Pets</p>
                     </div>
                 </div>
-                <div class="carousel-dots">
-                    <span class="dot active" onclick="currentSlide(0)"></span>
+                <div class="carousel-dots" role="tablist" aria-label="Navegação dos depoimentos">
+                    <span class="dot active" onclick="currentSlide(0)" role="tab" aria-label="Depoimento 1" aria-selected="true"></span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Portfólio -->
-    <section id="portfolio">
+    <section id="portfolio" aria-labelledby="portfolio-title">
         <div class="portfolio-container">
             <div class="section-title">
-                <h2>Portfólio</h2>
+                <h2 id="portfolio-title">Portfólio</h2>
             </div>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
-                    <img src="imagemjessicapets.png" alt="Site Jéssica Pets" class="portfolio-image" loading="lazy">
+                    <img src="imagemjessicapets.png" alt="Site Jéssica Pets - Página inicial do site" class="portfolio-image" loading="lazy" width="600" height="240">
                     <div class="portfolio-info">
                         <h3>Jéssica Pets</h3>
                         <p>Site completo que mostra o pet shop da Jéssica recém inaugurado em São Miguel Paulista.</p>
                         <a href="http://jessicapets.vercel.app" class="btn btn-secondary" target="_blank"
-                            rel="noopener">Visite o Site</a>
+                            rel="noopener noreferrer">Visite o Site <i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
             <div class="stats">
                 <div class="stat-item">
-                    <div class="stat-number">1</div>
+                    <div class="stat-number">5</div>
                     <div class="stat-text">Clientes Satisfeitos</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">1</div>
+                    <div class="stat-number">5</div>
                     <div class="stat-text">Projetos Entregues</div>
                 </div>
                 <div class="stat-item">
@@ -1263,11 +1405,11 @@
     </section>
 
     <!-- Mensagem de Evolução -->
-    <section class="evolution-message">
+    <section class="evolution-message" aria-labelledby="evolution-title">
         <div class="container">
             <div class="evolution-content">
-                <i class="fas fa-rocket"></i>
-                <h3>Em constante evolução</h3>
+                <i class="fas fa-rocket" aria-hidden="true"></i>
+                <h3 id="evolution-title">Em constante evolução</h3>
                 <p>Estamos sempre aprendendo, nos atualizando e buscando novas formas de atender cada vez melhor nossos
                     clientes. Cada projeto é uma oportunidade de crescer juntos!</p>
             </div>
@@ -1275,16 +1417,16 @@
     </section>
 
     <!-- Ferramentas e IAs -->
-    <section class="tools-section">
+    <section class="tools-section" aria-labelledby="tools-title">
         <div class="container">
             <div class="section-title">
-                <h2>Tecnologias que potencializam nossos projetos</h2>
+                <h2 id="tools-title">Tecnologias que potencializam nossos projetos</h2>
             </div>
             <div class="tools-carousel">
                 <div class="tools-track" id="toolsTrack">
                     <div class="tool-item">
-                        <div class="tool-icon"><img src="https://cdn.simpleicons.org/deepseek" alt="DeepSeek"
-                                class="tool-logo"></div>
+                        <div class="tool-icon"><img src="https://cdn.simpleicons.org/deepseek" alt="DeepSeek Logo"
+                                class="tool-logo" loading="lazy" width="48" height="48"></div>
                         <div class="tool-info">
                             <h3>DeepSeek</h3>
                             <p>IA para desenvolvimento</p>
@@ -1292,24 +1434,24 @@
                     </div>
                     <div class="tool-item">
                         <div class="tool-icon"><img
-                                src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT"
-                                class="tool-logo"></div>
+                                src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT Logo"
+                                class="tool-logo" loading="lazy" width="48" height="48"></div>
                         <div class="tool-info">
                             <h3>ChatGPT</h3>
                             <p>Assistente inteligente</p>
                         </div>
                     </div>
                     <div class="tool-item">
-                        <div class="tool-icon"><img src="https://cdn.simpleicons.org/githubcopilot" alt="GitHub Copilot"
-                                class="tool-logo"></div>
+                        <div class="tool-icon"><img src="https://cdn.simpleicons.org/githubcopilot" alt="GitHub Copilot Logo"
+                                class="tool-logo" loading="lazy" width="48" height="48"></div>
                         <div class="tool-info">
                             <h3>GitHub Copilot</h3>
                             <p>Programação assistida</p>
                         </div>
                     </div>
                     <div class="tool-item">
-                        <div class="tool-icon"><img src="https://cdn.simpleicons.org/visualstudiocode" alt="VS Code"
-                                class="tool-logo"></div>
+                        <div class="tool-icon"><img src="https://cdn.simpleicons.org/visualstudiocode" alt="VS Code Logo"
+                                class="tool-logo" loading="lazy" width="48" height="48"></div>
                         <div class="tool-info">
                             <h3>VS Code</h3>
                             <p>Editor de código</p>
@@ -1318,7 +1460,7 @@
                     <div class="tool-item">
                         <div class="tool-icon"><img
                                 src="https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png"
-                                alt="Vercel" class="tool-logo"></div>
+                                alt="Vercel Logo" class="tool-logo" loading="lazy" width="48" height="48"></div>
                         <div class="tool-info">
                             <h3>Vercel</h3>
                             <p>Hospedagem</p>
@@ -1327,7 +1469,59 @@
                     <div class="tool-item">
                         <div class="tool-icon"><img
                                 src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
-                                alt="GitHub" class="tool-logo"></div>
+                                alt="GitHub Logo" class="tool-logo" loading="lazy" width="48" height="48"></div>
+                        <div class="tool-info">
+                            <h3>GitHub</h3>
+                            <p>Versionamento</p>
+                        </div>
+                    </div>
+                    <!-- Duplicação para efeito de scroll infinito -->
+                    <div class="tool-item">
+                        <div class="tool-icon"><img src="https://cdn.simpleicons.org/deepseek" alt="DeepSeek Logo"
+                                class="tool-logo" loading="lazy" width="48" height="48"></div>
+                        <div class="tool-info">
+                            <h3>DeepSeek</h3>
+                            <p>IA para desenvolvimento</p>
+                        </div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon"><img
+                                src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT Logo"
+                                class="tool-logo" loading="lazy" width="48" height="48"></div>
+                        <div class="tool-info">
+                            <h3>ChatGPT</h3>
+                            <p>Assistente inteligente</p>
+                        </div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon"><img src="https://cdn.simpleicons.org/githubcopilot" alt="GitHub Copilot Logo"
+                                class="tool-logo" loading="lazy" width="48" height="48"></div>
+                        <div class="tool-info">
+                            <h3>GitHub Copilot</h3>
+                            <p>Programação assistida</p>
+                        </div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon"><img src="https://cdn.simpleicons.org/visualstudiocode" alt="VS Code Logo"
+                                class="tool-logo" loading="lazy" width="48" height="48"></div>
+                        <div class="tool-info">
+                            <h3>VS Code</h3>
+                            <p>Editor de código</p>
+                        </div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon"><img
+                                src="https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png"
+                                alt="Vercel Logo" class="tool-logo" loading="lazy" width="48" height="48"></div>
+                        <div class="tool-info">
+                            <h3>Vercel</h3>
+                            <p>Hospedagem</p>
+                        </div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon"><img
+                                src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                                alt="GitHub Logo" class="tool-logo" loading="lazy" width="48" height="48"></div>
                         <div class="tool-info">
                             <h3>GitHub</h3>
                             <p>Versionamento</p>
@@ -1341,32 +1535,37 @@
     </section>
 
     <!-- Contato -->
-    <section id="contato">
+    <section id="contato" aria-labelledby="contato-title">
         <div class="container">
             <div class="section-title">
-                <h2>Contato</h2>
+                <h2 id="contato-title">Contato</h2>
             </div>
             <div class="contact-form">
-                <form id="contactForm">
+                <form id="contactForm" novalidate>
                     <div class="form-group">
-                        <label for="name">Seu Nome</label>
-                        <input type="text" id="name" name="name" class="form-control" required minlength="3">
+                        <label for="name">Seu Nome *</label>
+                        <input type="text" id="name" name="name" class="form-control" required minlength="3" aria-required="true">
+                        <span class="error-message" id="name-error" style="display: none;"></span>
                     </div>
                     <div class="form-group">
-                        <label for="business">Nome do Empreendimento</label>
-                        <input type="text" id="business" name="business" class="form-control" required>
+                        <label for="business">Nome do Empreendimento *</label>
+                        <input type="text" id="business" name="business" class="form-control" required aria-required="true">
+                        <span class="error-message" id="business-error" style="display: none;"></span>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" class="form-control" required aria-required="true">
+                        <span class="error-message" id="email-error" style="display: none;"></span>
                     </div>
                     <div class="form-group">
-                        <label for="phone">Telefone</label>
-                        <input type="tel" id="phone" name="phone" class="form-control" required>
+                        <label for="phone">Telefone *</label>
+                        <input type="tel" id="phone" name="phone" class="form-control" required aria-required="true">
+                        <span class="error-message" id="phone-error" style="display: none;"></span>
                     </div>
                     <div class="form-group">
-                        <label for="message">Como posso te ajudar?</label>
-                        <textarea id="message" name="message" class="form-control" minlength="10" required></textarea>
+                        <label for="message">Como posso te ajudar? *</label>
+                        <textarea id="message" name="message" class="form-control" minlength="10" required aria-required="true"></textarea>
+                        <span class="error-message" id="message-error" style="display: none;"></span>
                     </div>
                     <button type="submit" class="btn btn-primary" id="submitBtn">Enviar pelo WhatsApp</button>
                     <div id="formFeedback" class="form-feedback"></div>
@@ -1379,7 +1578,7 @@
     <footer>
         <div class="footer-container">
             <a href="#inicio" aria-label="Ir para o início">
-                <img src="logo_berdigitall_footer_230326.png" alt="Ber Digitall" class="footer-logo" loading="lazy">
+                <img src="logo_berdigitall_footer_230326.png" alt="Ber Digitall" class="footer-logo" loading="lazy" width="auto" height="48">
             </a>
             <div class="footer-links">
                 <a href="#inicio">Início</a>
@@ -1389,12 +1588,12 @@
             </div>
             <div class="social-links">
                 <a href="https://wa.me/5511993335167?text=Olá, eu visitei o seu site e gostaria de saber mais."
-                    target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://instagram.com/ber.digitall" target="_blank" rel="noopener" aria-label="Instagram"><i
-                        class="fab fa-instagram"></i></a>
+                    target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                <a href="https://instagram.com/ber.digitall" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i
+                        class="fab fa-instagram" aria-hidden="true"></i></a>
                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contato@berdigitall.com.br&su=Contato%20via%20Site&body=Olá%20Ber%20Digitall,%0A%0Avisitei%20o%20site%20e%20gostaria%20de%20mais%20informações."
-                    target="_blank" rel="noopener" aria-label="Email">
-                    <i class="far fa-envelope"></i>
+                    target="_blank" rel="noopener noreferrer" aria-label="Email">
+                    <i class="far fa-envelope" aria-hidden="true"></i>
                 </a>
             </div>
             <div class="copyright">
@@ -1405,23 +1604,57 @@
 
     <!-- Botão WhatsApp -->
     <a href="https://wa.me/5511993335167?text=Olá, eu visitei o seu site e gostaria de saber mais." class="whatsapp-btn"
-        target="_blank" rel="noopener" aria-label="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
+        target="_blank" rel="noopener noreferrer" aria-label="WhatsApp - Fale conosco">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
+
+    <!-- Botão Voltar ao Topo -->
+    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo da página">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Menu mobile
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const navMenu = document.getElementById('nav-menu');
+            const skipLink = document.querySelector('.skip-link');
+
+            if (skipLink) {
+                skipLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const mainContent = document.querySelector('#inicio');
+                    if (mainContent) {
+                        mainContent.setAttribute('tabindex', '-1');
+                        mainContent.focus();
+                    }
+                });
+            }
 
             if (mobileMenuBtn) {
                 mobileMenuBtn.addEventListener('click', function () {
                     navMenu.classList.toggle('active');
                     const isExpanded = this.getAttribute('aria-expanded') === 'true';
                     this.setAttribute('aria-expanded', !isExpanded);
+                    if (!isExpanded) {
+                        this.setAttribute('aria-label', 'Fechar menu de navegação');
+                    } else {
+                        this.setAttribute('aria-label', 'Abrir menu de navegação');
+                    }
                 });
             }
+
+            // Fechar menu ao clicar em um link
+            const navLinks = document.querySelectorAll('#nav-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    if (mobileMenuBtn) {
+                        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                        mobileMenuBtn.setAttribute('aria-label', 'Abrir menu de navegação');
+                    }
+                });
+            });
 
             // Calcular experiência
             function calcularExperiencia() {
@@ -1446,49 +1679,161 @@
             calcularExperiencia();
 
             // Ano no footer
-            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            const yearElement = document.getElementById('currentYear');
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
 
-            // Scroll suave
+            // Scroll suave e ajuste para header fixo
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
                     const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
+                    if (targetId === '#' || targetId === '') return;
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
+                        e.preventDefault();
                         const headerHeight = document.querySelector('header').offsetHeight;
-                        window.scrollTo({ top: targetElement.offsetTop - headerHeight, behavior: 'smooth' });
-                        if (navMenu.classList.contains('active')) navMenu.classList.remove('active');
+                        const targetPosition = targetElement.offsetTop - headerHeight;
+                        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                        targetElement.setAttribute('tabindex', '-1');
+                        targetElement.focus({ preventScroll: true });
+                        if (navMenu.classList.contains('active')) {
+                            navMenu.classList.remove('active');
+                            if (mobileMenuBtn) {
+                                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                            }
+                        }
                     }
                 });
             });
 
-            // Formulário WhatsApp
+            // Botão Back to Top
+            const backToTopBtn = document.getElementById('backToTop');
+            if (backToTopBtn) {
+                window.addEventListener('scroll', function () {
+                    if (window.scrollY > 300) {
+                        backToTopBtn.classList.add('visible');
+                    } else {
+                        backToTopBtn.classList.remove('visible');
+                    }
+                });
+
+                backToTopBtn.addEventListener('click', function () {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+
+            // Validação de formulário aprimorada
             const contactForm = document.getElementById('contactForm');
             if (contactForm) {
+                function validateField(field, errorElement, validationFn, errorMessage) {
+                    const isValid = validationFn(field.value);
+                    if (!isValid) {
+                        field.classList.add('error');
+                        if (errorElement) {
+                            errorElement.textContent = errorMessage;
+                            errorElement.style.display = 'block';
+                        }
+                        return false;
+                    } else {
+                        field.classList.remove('error');
+                        if (errorElement) {
+                            errorElement.style.display = 'none';
+                        }
+                        return true;
+                    }
+                }
+
+                const validators = {
+                    name: (val) => val.trim().length >= 3,
+                    business: (val) => val.trim().length >= 2,
+                    email: (val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val),
+                    phone: (val) => val.replace(/\D/g, '').length >= 10,
+                    message: (val) => val.trim().length >= 10
+                };
+
+                const errorMessages = {
+                    name: 'Digite seu nome completo (mínimo 3 caracteres)',
+                    business: 'Digite o nome do seu negócio',
+                    email: 'Digite um email válido (ex: nome@dominio.com)',
+                    phone: 'Digite um telefone válido (DDD + número)',
+                    message: 'Digite uma mensagem com pelo menos 10 caracteres'
+                };
+
+                // Validar em tempo real (blur)
+                ['name', 'business', 'email', 'phone', 'message'].forEach(fieldId => {
+                    const field = document.getElementById(fieldId);
+                    const errorElement = document.getElementById(`${fieldId}-error`);
+                    if (field && errorElement) {
+                        field.addEventListener('blur', function () {
+                            validateField(field, errorElement, validators[fieldId], errorMessages[fieldId]);
+                        });
+                    }
+                });
+
+                // Submit do formulário
                 contactForm.addEventListener('submit', function (e) {
                     e.preventDefault();
-                    const nome = document.getElementById('name').value;
-                    const empresa = document.getElementById('business').value;
-                    const email = document.getElementById('email').value;
-                    const telefone = document.getElementById('phone').value;
-                    const mensagem = document.getElementById('message').value;
-                    const texto = `*Contato Ber Digitall*%0A%0A*Nome:* ${nome}%0A*Empresa:* ${empresa}%0A*E-mail:* ${email}%0A*Telefone:* ${telefone}%0A*Mensagem:* ${mensagem}`;
+                    
+                    let isValid = true;
+                    ['name', 'business', 'email', 'phone', 'message'].forEach(fieldId => {
+                        const field = document.getElementById(fieldId);
+                        const errorElement = document.getElementById(`${fieldId}-error`);
+                        if (field && errorElement) {
+                            const fieldIsValid = validateField(field, errorElement, validators[fieldId], errorMessages[fieldId]);
+                            if (!fieldIsValid) isValid = false;
+                        }
+                    });
+
+                    if (!isValid) {
+                        const formFeedback = document.getElementById('formFeedback');
+                        if (formFeedback) {
+                            formFeedback.textContent = 'Por favor, preencha todos os campos corretamente.';
+                            formFeedback.className = 'form-feedback error';
+                            setTimeout(() => {
+                                formFeedback.className = 'form-feedback';
+                            }, 3000);
+                        }
+                        return;
+                    }
+
+                    const nome = document.getElementById('name').value.trim();
+                    const empresa = document.getElementById('business').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const telefone = document.getElementById('phone').value.trim();
+                    const mensagem = document.getElementById('message').value.trim();
+                    
+                    const texto = `*Contato Ber Digitall*%0A%0A*Nome:* ${encodeURIComponent(nome)}%0A*Empresa:* ${encodeURIComponent(empresa)}%0A*E-mail:* ${encodeURIComponent(email)}%0A*Telefone:* ${encodeURIComponent(telefone)}%0A*Mensagem:* ${encodeURIComponent(mensagem)}`;
                     const url = `https://wa.me/5511993335167?text=${texto}`;
+                    
                     const submitBtn = document.getElementById('submitBtn');
                     const formFeedback = document.getElementById('formFeedback');
-                    submitBtn.disabled = true;
-                    submitBtn.textContent = 'Redirecionando...';
-                    formFeedback.textContent = 'Abrindo WhatsApp...';
-                    formFeedback.style.display = 'block';
-                    formFeedback.style.backgroundColor = '#d5f4e6';
-                    formFeedback.style.color = '#2ecc71';
-                    window.open(url, '_blank');
+                    
+                    if (submitBtn) {
+                        submitBtn.disabled = true;
+                        submitBtn.classList.add('btn-loading');
+                        submitBtn.textContent = 'Redirecionando...';
+                    }
+                    
+                    if (formFeedback) {
+                        formFeedback.textContent = 'Abrindo WhatsApp...';
+                        formFeedback.className = 'form-feedback success';
+                    }
+                    
+                    window.open(url, '_blank', 'noopener,noreferrer');
+                    
                     setTimeout(() => {
+                        if (submitBtn) {
+                            submitBtn.disabled = false;
+                            submitBtn.classList.remove('btn-loading');
+                            submitBtn.textContent = 'Enviar pelo WhatsApp';
+                        }
                         contactForm.reset();
-                        submitBtn.disabled = false;
-                        submitBtn.textContent = 'Enviar pelo WhatsApp';
-                        setTimeout(() => { formFeedback.style.display = 'none'; }, 3000);
+                        if (formFeedback) {
+                            setTimeout(() => {
+                                formFeedback.className = 'form-feedback';
+                            }, 3000);
+                        }
                     }, 2000);
                 });
             }
@@ -1500,15 +1845,29 @@
                     if (entry.isIntersecting) {
                         entry.target.style.opacity = '1';
                         entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
                     }
                 });
             }, observerOptions);
+            
             document.querySelectorAll('.portfolio-item, .timeline-item, .stat-item, .why-site-card').forEach(el => {
                 el.style.opacity = '0';
                 el.style.transform = 'translateY(20px)';
                 el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
                 observer.observe(el);
             });
+
+            // Carregamento de imagens lazy nativo + fallback
+            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+            if ('loading' in HTMLImageElement.prototype) {
+                // Navegador suporta lazy loading nativo
+                console.log('Lazy loading nativo suportado');
+            } else {
+                // Fallback para navegadores antigos
+                const lazyLoadScript = document.createElement('script');
+                lazyLoadScript.src = 'https://cdn.jsdelivr.net/npm/intersection-observer@0.12.0/intersection-observer.min.js';
+                document.body.appendChild(lazyLoadScript);
+            }
         });
 
         function currentSlide(n) {
@@ -1516,8 +1875,14 @@
             const dots = document.querySelectorAll('.dot');
             slides.forEach(slide => slide.classList.remove('active'));
             dots.forEach(dot => dot.classList.remove('active'));
-            if (slides[n]) slides[n].classList.add('active');
-            if (dots[n]) dots[n].classList.add('active');
+            if (slides[n]) {
+                slides[n].classList.add('active');
+                slides[n].setAttribute('aria-label', `Depoimento ${n + 1} de ${slides.length} - ativo`);
+            }
+            if (dots[n]) {
+                dots[n].classList.add('active');
+                dots[n].setAttribute('aria-selected', 'true');
+            }
         }
     </script>
 </body>
